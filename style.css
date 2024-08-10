@@ -65,7 +65,7 @@ section h4 {
     background: var(--clr1);
 }
 
-.btn {
+.btn-custom {
     margin-top: 2rem;
     padding: 1.3rem 4rem;
     font-size: 1.5rem;
@@ -81,7 +81,7 @@ section h4 {
     outline: none;
 }
 
-.btn:hover {
+.btn-custom:hover {
     transform: translateY(-1rem);
     transition: all .5s ease;
 }
@@ -136,13 +136,13 @@ span {
     font-size: 2.5rem;
 }
 
-.head .navbar {
+.head .navbar-custom {
     font-size: 1.8rem;
     justify-content: space-between;
     font-weight: 500;
 }
 
-.head .navbar a {
+.head .navbar-custom a {
     padding-left: 1.5rem;
     color: var(--clr3);
 }
@@ -364,7 +364,7 @@ span {
     font-size: 2rem;
 }
 
-.venue .venue-list .venue-box .venue-info .btn {
+.venue .venue-list .venue-box .venue-info .btn-custom {
     width: 12rem;
     height: 4rem;
     margin: 1rem;
@@ -421,20 +421,20 @@ footer {
     background-color: var(--clr2);
 }
 
-.container {
+.container-custom {
     padding: 3rem;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 2rem;
 }
 
-.f-container h2 {
+.f-container-custom h2 {
     font-size: 2.5rem;
     color: var(--clr3);
     padding: 1rem 0;
 }
 
-.f-container a {
+.f-container-custom a {
     font-size: 1.4rem;
     text-decoration: none;
     color: var(--clr3);
@@ -442,30 +442,30 @@ footer {
     display: block;
 }
 
-.f-container a:hover {
+.f-container-custom a:hover {
     transform: translateX(.5rem);
     transition: .5s ease;
 }
 
-.f-container i {
+.f-container-custom i {
     padding-right: .5rem;
     color: var(--clr1);
 }
 
-.f-container p {
+.f-container-custom p {
     padding-bottom: 1rem;
     font-size: 1.5rem;
     color: var(--clr1);
 }
 
-.f-container input {
+.f-container-custom input {
     width: 90%;
     padding: 1rem;
     background: #eee;
     border: .2rem solid var(--clr1);
 }
 
-.f-container .btn {
+.f-container-custom .btn-custom {
     background: var(--clr1);
     color: #fff;
     cursor: pointer;
@@ -473,7 +473,7 @@ footer {
     border-radius: .2rem;
 }
 
-.f-container .social i {
+.f-container-custom .social i {
     margin-top: 1rem;
     font-size: 2rem;
     background: var(--clr3);
@@ -481,7 +481,7 @@ footer {
     padding: 1rem;
 }
 
-.f-container .social i:hover {
+.f-container-custom .social i:hover {
     transform: rotate(360deg);
     transition: 1s ease;
 }
@@ -535,7 +535,7 @@ footer {
         display: inline-block;
         font-size: 2rem;
     }
-    .navbar {
+    .navbar-custom {
         position: absolute;
         top: 99%;
         left: 0;
@@ -543,10 +543,10 @@ footer {
         background: var(--clr2);
         clip-path: polygon(0 0, 100% 0%, 100% 0, 0 0);
     }
-    .head .navbar.active {
+    .head .navbar-custom.active {
         clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
     }
-    .navbar a {
+    .navbar-custom a {
         display: block;
         margin: 2rem;
     }
@@ -557,7 +557,7 @@ footer {
     .vendor-list,
     .venue-list,
     .invitation-row,
-    .container {
+    .container-custom {
         display: inline-block;
     }
     .in-box {

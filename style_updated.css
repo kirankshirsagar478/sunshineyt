@@ -1,0 +1,29 @@
+
+/* Add your custom styles here */
+
+/* Example of customizing Bootstrap's .btn class */
+.btn-custom {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+.container-custom {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.navbar-custom {
+    background-color: #343a40;
+    padding: 15px;
+}
+
+.navbar-custom a {
+    color: #ffffff;
+    padding: 15px;
+}
+
+/* Add other necessary custom styles while avoiding conflicts with Bootstrap */
