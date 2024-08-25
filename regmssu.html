@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Employee Records</title>
+    <link rel="stylesheet" href="../style1.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <h1 id="header" style="font-size: 15px;">Retrieve Employee Records</h1>
+    <div class="container">
+        <button class="btn btn-primary" onclick="getAllEmployees();">Fetch All Records</button>
+        <div id="tableContainer" class="table-responsive">
+            <table class="table table-bordered" id="employeeTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Department</th>
+                        <!-- Add more columns as needed -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Data will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function createGETRequest(token, dbname, relationName, jsonObjStr) {
+            return JSON.stringify({
+                token: token,
+                cmd: "GET",
+                dbName: dbname,
+                rel: relationName,
+                jsonStr: jsonObjStr
+            });
+        }
+
+        function executeCommand(reqString, dbBaseUrl, apiEndPointUrl) {
+            var url = dbBaseUrl + apiEndPointUrl;
+            var jsonObj;
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: reqString,
+                async: false,
+                success: function(result) {
+                    jsonObj = JSON.parse(result);
+                },
+                error: function(result) {
+                    var dataJsonObj = result.responseText;
+                    jsonObj = JSON.parse(dataJsonObj);
+                }
+            });
+            return jsonObj;
+        }
+
+        function getAllEmployees() {
+            var getReqStr = createGETRequest(
+                "90935456|-31948798142885023|90931464",
+                "Employee",
+                "Emp-rel",
+                "{}" // empty JSON object to get all records
+            );
+            var resultObj = executeCommand(getReqStr, "http://api.login2explore.com:5577", "/api/irl");
+            populateTable(resultObj);
+        }
+
+        function populateTable(resultObj) {
+            var tbody = $("#employeeTable tbody");
+            tbody.empty(); // clear existing table data
+
+            // Assuming resultObj has an array of records in a property named "data"
+            var records = resultObj.data || [];
+
+            records.forEach(function(record) {
+                var row = "<tr>";
+                row += "<td>" + record.id + "</td>";
+                row += "<td>" + record.name + "</td>";
+                row += "<td>" + record.department + "</td>";
+                // Add more cells as needed
+                row += "</tr>";
+                tbody.append(row);
+            });
+        }
+    </script>
+
+    <button id="footer" onclick="location.href='../index.html'">Home</button>
+</body>
+</html>

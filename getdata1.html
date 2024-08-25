@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Admin Panel - View All Students</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="admin-style.css"> <!-- Add a custom stylesheet for admin panel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <!-- Admin Panel Header -->
+    <header class="admin-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1>Admin Panel</h1>
+                </div>
+                <div class="col-md-6 text-right">
+                    <a href="logout.php" class="btn btn-danger">Logout</a> <!-- Add logout functionality -->
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- All Students Table -->
+    <section class="all-students mt-5">
+        <div class="container">
+            <h2>All Registered Students</h2>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Roll-No</th>
+                        <th>Full Name</th>
+                        <th>Class</th>
+                        <th>Birth-Date</th>
+                        <th>Address</th>
+                        <th>Enrollment-Date</th>
+                    </tr>
+                </thead>
+                <tbody id="studentRecords">
+                    <!-- Data rows will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <script>
+        // Function to fetch student data from the server
+        function fetchStudentData() {
+            var getRequest = {
+                "requestType": "GET",
+                "url": "http://api.login2explore.com:5577/api/irl",
+                "headers": {
+                    "Content-Type": "application/json"
+                }
+            };
+            
+            jQuery.ajaxSetup({ async: false });
+            var result = $.ajax(getRequest).responseJSON;
+            jQuery.ajaxSetup({ async: true });
+
+            if (result && result.length > 0) {
+                result.forEach(function (student) {
+                    var newRow = `<tr>
+                        <td>${student.stuId}</td>
+                        <td>${student.stuName}</td>
+                        <td>${student.stuClass}</td>
+                        <td>${student.stuDOB}</td>
+                        <td>${student.stuAddress}</td>
+                        <td>${student.stuEnrollDate}</td>
+                    </tr>`;
+                    $("#studentRecords").append(newRow);
+                });
+            } else {
+                $("#studentRecords").append('<tr><td colspan="6">No records found.</td></tr>');
+            }
+        }
+
+        // Call the function to load student data when the page is ready
+        $(document).ready(function () {
+            fetchStudentData();
+        });
+    </script>
+</body>
+
+</html>
