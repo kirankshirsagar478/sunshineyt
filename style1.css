@@ -39,7 +39,7 @@ section {
 
 section h3 {
     font-size: 3rem;
-    color: var(--clr2);
+    /*color: var(--clr2);*/
     text-transform: none;
     text-align: center;
     letter-spacing: .2rem;
@@ -65,7 +65,7 @@ section h4 {
     background: var(--clr1);
 }
 
-.btn-custom {
+.btn {
     margin-top: 1rem;
     padding: 1.9rem 3rem;
     font-size: 1.5rem;
@@ -75,12 +75,28 @@ section h4 {
     color: var(--clr3);
     background-color: var(--clr2);
     border: none;
-    border-radius: 5px;
     box-shadow: 0rem 2rem 2rem rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease 0s;
     cursor: pointer;
     outline: none;
 }
+
+
+/*.btn-custom {
+    margin-top: 2rem;
+    padding: 1.3rem 4rem;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    letter-spacing: .1rem;
+    font-weight: 600;
+    color: var(--clr3);
+    background-color: var(--clr1);
+    border: none;
+    box-shadow: 0rem 4rem 4rem rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+}*/
 
 .btn-custom:hover {
     transform: translateY(-1rem);
@@ -120,9 +136,6 @@ section h4 {
     align-items: left;
     justify-content: space-between;
 }
-.fa-heart {
-    color: red;
-}
 
 .head .logo {
     font-size: 2.5rem;
@@ -152,7 +165,6 @@ span {
     color: var(--clr3);
 }
 
-/*  ---------Developer 2 code -----------  */
 .head {
     display: flex;
     justify-content: space-between;
@@ -189,7 +201,7 @@ span {
     font-size: 1.1em;
 }
 
-.btn-custom1 {
+.btn {
     background-color: var(--clr2);
     color: #fff;
     padding: 10px 20px;
@@ -210,6 +222,9 @@ span {
     }
     .navbar-custom.active {
         display: flex;
+    }
+    .btn {
+        margin-left: 20px;
     }
     #menu-bar {
         display: block;
@@ -272,7 +287,7 @@ span {
 }
 
 
-/*-------------------About_Us Developer 2--------------*/
+/*-------------------About_Us--------------*/
 
 .vendor-list {
     align-items: center;
