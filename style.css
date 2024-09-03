@@ -46,7 +46,7 @@ section h3 {
 }
 
 section p {
-    color: var(--clr4);
+    color: var(--clr3);
     font-size: 1.9rem;
     text-transform: capitalize;
     line-height: 3rem;
