@@ -120,6 +120,7 @@ section h4 {
     align-items: left;
     justify-content: space-between;
 }
+
 .fa-heart {
     color: red;
 }
@@ -152,7 +153,9 @@ span {
     color: var(--clr3);
 }
 
+
 /*  ---------Developer 2 code -----------  */
+
 .head {
     display: flex;
     justify-content: space-between;
@@ -468,7 +471,7 @@ span {
 }
 
 .venue .venue-list .venue-box {
-    flex: 1 1 50rem;
+    flex: 1 1 30rem;
     margin: 1rem;
     position: relative;
     border-radius: .6rem;
@@ -477,7 +480,7 @@ span {
 }
 
 .venue .venue-list .venue-box img {
-    height: 100%;
+    height: 22rem;
     width: 100%;
     object-fit: cover;
 }
