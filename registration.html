@@ -2,9 +2,6 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event-----Planner</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -18,19 +15,16 @@
 
 <body>
     <header class="head">
-        <a href="#" class="logo">
-            <img src="img/logo.jpg" alt="Logo" class="logo-img">
-        </a>
-        <nav class="navbar-custom">
+        <a href="#" class="logo"><i class="fas fa-heart"></i>&nbsp;Wed<span>Me</span>Good&nbsp;
+            <i class="fas fa-heart"></i></a>
+        <nav class="navbar-custom ">
             <a href="#" class="active">Home</a>
-            <a href="#vendor">Service</a>
-            <a href="#service">Gallery</a>
-            <a href="#Aboutevents">About Events</a>
-            <!--a href="#venue">Venue</a>
-            <a href="#invite">E-invites</a-->
+            <a href="#service">Service</a>
+            <a href="#vendor">Vendors</a>
+            <a href="#venue">Venue</a>
+            <a href="#invite">E-invites</a>
             <a href="#contact">Contact</a>
         </nav>
-        <button class="btn-custom1">Register Yourself</button>
         <div id="menu-bar"><i class="fas fa-bars"></i></div>
     </header>
     <!------------------------services-------------------->
@@ -85,10 +79,10 @@
     <footer id="contact">
         <div class="container-custom">
             <div class="f-container-custom">
-                <h2>Sunshine Event - Your Personal Wedding Planner</h2><br>
-                <p>Plan your wedding with Us SunShine is an Indian Wedding Planning Website </p>
+                <h2>WedMeGood - Your Personal Wedding Planner</h2><br>
+                <p>Plan your wedding with Us WedMeGood is an Indian Wedding Planning Website </p>
                 <div>
-                    <button class="btn-custom">Register as a Client</button>
+                    <button class="btn-custom">Register as a Vendor</button>
                 </div>
                 <div class="social">
                     <i class="fab fa-facebook"></i>
@@ -99,29 +93,27 @@
                 </div>
             </div>
             <div class="f-container-custom">
-                <h2>Our Location in Pune</h2>
-                <a href="#"><i class="fas fa-angle-right"></i>Pimpri Chinchwad</a>
-                <a href="#"><i class="fas fa-angle-right"></i>Hinjewadi</a>
-                <a href="#"><i class="fas fa-angle-right"></i>Warje</a>
-                <a href="#"><i class="fas fa-angle-right"></i>Nigadi</a>
-                <a href="#"><i class="fas fa-angle-right"></i>Karvenagar</a>
-                <a href="#"><i class="fas fa-angle-right"></i>Katraj</a>
+                <h2>Our Location</h2>
+                <a href="#"><i class="fas fa-angle-right"></i>Anand</a>
+                <a href="#"><i class="fas fa-angle-right"></i>Vadodara</a>
+                <a href="#"><i class="fas fa-angle-right"></i>Mumbai</a>
+                <a href="#"><i class=" fas fa-angle-right "></i>Ahemdabad</a>
+                <a href=" # "><i class=" fas fa-angle-right "></i>Surat</a>
             </div>
 
-            <div class="f-container-custom">
-                <h2>Address</h2>
-                <p>Office Address: Sunshine Events Office, Samarth Heights, Lane No 5, Jadhavwadi, Pimpri Chinchwad, Pune-412105</p>
-                <p>Contact Us :</p>
-                <input type="text" placeholder="Enter your Location"><br><br>
-                <input type="text" placeholder="Enter Your Email">
-                <button class="btn-custom">Enter</button>
+            <div class=" f-container-custom ">
+                <h2>Our Newsletter</h2>
+                <p>Subscribe for latest updates</p>
+                <input type=" text " placeholder=" Enter Your Email ">
+                <button class=" btn-custom ">Subscribe</button>
             </div>
         </div>
     </footer>
-    <div class="copyright">
-        <p>Copyright ©2024 All Rights Reserved </p>
+    <div class=" copyright ">
+        <p>Copyright ©2022 All Rights Reserved | Knowledge Place KP</p>
     </div>
 </body>
+
 <script>
     let menu = document.querySelector('#menu-bar');
     let head = document.querySelector('.head .navbar');
@@ -159,24 +151,28 @@
             $("#stuClass").focus();
             return "";
         }
+
         var stuDOBVar = $("#stuDOB").val();
         if (stuDOBVar === "") {
             alert("Student Birth-Date is Required Value");
             $("stuDOB").focus();
             return "";
         }
+
         var stuAddressVar = $("#stuAddress").val();
         if (stuAddressVar === "") {
             alert("Student Address is Required Value");
             $("#stuAddress").focus();
             return "";
         }
+
         var stuEnrollDateVar = $("stuEnrollDate").val();
         if (stuEnrollDateVar === "") {
             alert("Student Enrollment-Date is Required Value");
             $("stuEnrollDate").focus();
             return "";
         }
+
         var jsonStrObj = {
             stuId: stuIdVar,
             stuName: stuNameVar,
@@ -204,17 +200,13 @@
             stuRelationName,
             stuIdJsonObj
         );
-        jQuery.ajaxSetup({
-            async: false
-        });
+        jQuery.ajaxSetup({ async: false });
         var resJsonObj = executeCommandAtGivenBaseUrl(
             getRequest,
             jpdbBaseURL,
             jpdbURL
         );
-        jQuery.ajaxSetup({
-            async: true
-        });
+        jQuery.ajaxSetup({ async: true });
         if (resJsonObj.status === 400) {
             $("#save").prop("disabled", flase);
             $("#reset").prop("disabled", false);
@@ -248,16 +240,12 @@
             stuRelationName,
             localStorage.getItem("recno")
         );
-        jQuery.ajaxSetup({
-            async: falses
-        });
+        jQuery.ajaxSetup({ async: falses });
         var resJsonObj = executeCommandAtGivenBaseUrl(
             updateRequest.jpdBaseURL,
             jpdbIML
         );
-        jQuery.ajaxSetup({
-            async: true
-        });
+        jQuery.ajaxSetup({ async: true });
         console.log(resJsonObj);
         resetForm();
         $("#stuID").focus();
@@ -285,21 +273,18 @@
 
         alert(putReqStr);
 
-        jQuery.ajaxSetup({
-            async: false
-        });
+        jQuery.ajaxSetup({ async: false });
         var resultObj = executeCommandAtGivenBaseUrl(
             putReqStr,
             "http://api.login2explore.com:5577",
             "/api/iml"
         );
-        jQuery.ajaxSetup({
-            async: true
-        });
+        jQuery.ajaxSetup({ async: true });
 
         alert(JSON.stringify(resultObj));
         resetForm();
     }
 </script>
+
 
 </html>
