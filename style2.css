@@ -1,3 +1,5 @@
+/*---------------------------global code--------------------------------*/
+
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital@0;1&display=swap');
 :root {
     --clr1: rgb(21, 12, 104);
@@ -39,14 +41,14 @@ section {
 
 section h3 {
     font-size: 3rem;
-    /*color: var(--clr2);*/
+    color: var(--clr2);
     text-transform: none;
     text-align: center;
     letter-spacing: .2rem;
 }
 
 section p {
-    color: var(--clr4);
+    color: var(--clr3);
     font-size: 1.9rem;
     text-transform: capitalize;
     line-height: 3rem;
@@ -65,7 +67,7 @@ section h4 {
     background: var(--clr1);
 }
 
-.btn {
+.btn-custom {
     margin-top: 1rem;
     padding: 1.9rem 3rem;
     font-size: 1.5rem;
@@ -75,28 +77,12 @@ section h4 {
     color: var(--clr3);
     background-color: var(--clr2);
     border: none;
+    border-radius: 5px;
     box-shadow: 0rem 2rem 2rem rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease 0s;
     cursor: pointer;
     outline: none;
 }
-
-
-/*.btn-custom {
-    margin-top: 2rem;
-    padding: 1.3rem 4rem;
-    font-size: 1.5rem;
-    text-transform: capitalize;
-    letter-spacing: .1rem;
-    font-weight: 600;
-    color: var(--clr3);
-    background-color: var(--clr1);
-    border: none;
-    box-shadow: 0rem 4rem 4rem rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease 0s;
-    cursor: pointer;
-    outline: none;
-}*/
 
 .btn-custom:hover {
     transform: translateY(-1rem);
@@ -137,6 +123,10 @@ section h4 {
     justify-content: space-between;
 }
 
+.fa-heart {
+    color: red;
+}
+
 .head .logo {
     font-size: 2.5rem;
     color: var(--clr3);
@@ -164,6 +154,9 @@ span {
     display: none;
     color: var(--clr3);
 }
+
+
+/*  ---------Developer 2 code -----------  */
 
 .head {
     display: flex;
@@ -201,7 +194,7 @@ span {
     font-size: 1.1em;
 }
 
-.btn {
+.btn-custom1 {
     background-color: var(--clr2);
     color: #fff;
     padding: 10px 20px;
@@ -223,9 +216,6 @@ span {
     .navbar-custom.active {
         display: flex;
     }
-    .btn {
-        margin-left: 20px;
-    }
     #menu-bar {
         display: block;
         color: #fff;
@@ -239,328 +229,7 @@ span {
 }
 
 
-/*----------------------Home-------------*/
-
-.home {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)), url("img/background.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    justify-content: center;
-    align-items: center;
-    height: 90vh;
-}
-
-.search-box {
-    margin: 20rem 0 0 0;
-    color: var(--clr3);
-    text-align: center;
-}
-
-.search-box h1 {
-    font-size: 5.5rem;
-    text-transform: capitalize;
-    font-weight: 600;
-    letter-spacing: .2rem;
-}
-
-.search-box p {
-    font-size: 1.8rem;
-    margin: .5rem 0;
-}
-
-.search-field {
-    width: 25rem;
-    height: 4.5rem;
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--clr2);
-}
-
-@media(max-width:767px) {
-    .search-box h1 {
-        font-size: 4rem;
-    }
-    .search-field {
-        width: 15rem;
-    }
-}
-
-
-/*-------------------About_Us--------------*/
-
-.vendor-list {
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.about {
-    max-width: 1300px;
-    background: rgb(245, 236, 245);
-    font-weight: 100;
-    flex: 1 1 30rem;
-    padding: 1.2rem;
-    margin: 1.5rem;
-    border-radius: 1rem;
-    box-shadow: 0 .2rem .5rem rgb(236, 68, 90);
-}
-
-.vendor .vendor-row {
-    max-width: 1300px;
-    background: rgb(245, 236, 245);
-    height: 35rem;
-    flex: 1 1 30rem;
-    padding: 1.2rem;
-    margin: 1.5rem;
-    border-radius: 1rem;
-    box-shadow: 0 .2rem .5rem rgb(236, 68, 90);
-}
-
-.vendor .vendor-roww {
-    max-width: 1300px;
-    background: rgb(245, 236, 245);
-    height: 35rem;
-    flex: 1 1 30rem;
-    padding: 1.2rem;
-    margin: 1.5rem;
-    border-radius: 1rem;
-    box-shadow: 0 .2rem .5rem rgb(236, 68, 90);
-}
-
-.vendor-roww h2 {
-    color: var(--clr1);
-}
-
-.vendor-roww i {
-    color: var(--clr2);
-}
-
-.vendor-row:hover {
-    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-    transform: rotate(5deg);
-}
-
-.vendor .vendor-row img {
-    height: 20rem;
-    width: 100%;
-    object-fit: cover;
-}
-
-.vendor-row h2 {
-    font-size: 2rem;
-    align-items: center;
-}
-
-.vendor-row p {
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: var(--clr1);
-}
-
-.vendor h3 {
-    font-size: 2rem;
-    color: var(clr2);
-    background: var(--clr5);
-}
-
-
-/*-------------------services--------------*/
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body,
-html {
-    height: 100%;
-    font-family: Arial, sans-serif;
-}
-
-.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: grey;
-    padding: 50px;
-    width: 100%;
-    height: 100vh;
-    box-sizing: border-box;
-}
-
-.text-content {
-    flex: 1;
-    color: white;
-    padding-right: 20px;
-}
-
-.text-content h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-}
-
-.text-content p {
-    font-size: 1.2em;
-    line-height: 1.6;
-    color: #000;
-}
-
-.image-content {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.image-content img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        text-align: center;
-    }
-    .text-content {
-        padding-right: 0;
-        margin-bottom: 20px;
-    }
-}
-
-
-/*----------------------vendor section------------*/
-
-.vendor-list {
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.vendor .vendor-row {
-    max-width: 1300px;
-    background: rgb(245, 236, 245);
-    height: 35rem;
-    flex: 1 1 30rem;
-    padding: 1.2rem;
-    margin: 1.5rem;
-    border-radius: 1rem;
-    box-shadow: 0 .2rem .5rem rgb(236, 68, 90);
-}
-
-.vendor-row:hover {
-    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-    transform: rotate(5deg);
-}
-
-.vendor-row .rate {
-    width: 6rem;
-    padding: .5rem .1rem;
-    color: #000;
-    border: none;
-    background: var(--clr6);
-    font-size: 1.6rem;
-    font-weight: 400;
-}
-
-.vendor .vendor-row img {
-    height: 20rem;
-    width: 100%;
-    object-fit: cover;
-}
-
-.vendor-row h2 {
-    font-size: 2rem;
-    font-weight: 600;
-}
-
-.vendor-row p {
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: var(--clr4);
-}
-
-.vendor h3 {
-    font-size: 2rem;
-    color: var(clr2);
-    background: var(--clr4);
-}
-
-
-/*----------------------------venue section-----------------*/
-
-.venue .venue-list {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.venue .venue-list .venue-box {
-    flex: 1 1 50rem;
-    margin: 1rem;
-    position: relative;
-    border-radius: .6rem;
-    overflow: hidden;
-    height: 20rem;
-}
-
-.venue .venue-list .venue-box img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-}
-
-.venue .venue-list .venue-box .venue-info {
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    color: #fff;
-    background: rgba(46, 39, 40, 0.5);
-    transform: scale(1.3);
-    opacity: 0;
-    transition: 1s ease;
-}
-
-.venue .venue-list .venue-box:hover .venue-info {
-    transform: scale(1);
-    opacity: 1;
-}
-
-.venue .venue-list .venue-box .venue-info h2 {
-    letter-spacing: .1rem;
-    font-size: 3rem;
-}
-
-.venue .venue-list .venue-box .venue-info p {
-    letter-spacing: .1rem;
-    font-size: 2rem;
-}
-
-.venue .venue-list .venue-box .venue-info .btn-custom {
-    width: 12rem;
-    height: 4rem;
-    margin: 1rem;
-    padding: .6rem;
-    letter-spacing: .1rem;
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: #fff;
-    background: rgb(236, 68, 90);
-    border: none;
-    border-radius: .5rem;
-}
+/*-------------------card designs----------------*/
 
 
 /*--------------------------e-invitation section-----------*/
@@ -595,7 +264,7 @@ html {
 }
 
 
-/*---------------------------footer section-------------*/
+/*----------------------footer section---------------*/
 
 footer {
     padding: 5rem 5%;
