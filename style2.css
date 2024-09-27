@@ -263,6 +263,12 @@ span {
     object-fit: cover;
 }
 
+.invite .invitation-row div {
+    font: ('https://fonts.googleapis.com/css2?family=PT+Sans:ital@0;1&display=swap');
+    font-size: medium;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
 
 /*----------------------footer section---------------*/
 
