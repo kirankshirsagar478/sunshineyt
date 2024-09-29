@@ -13,12 +13,12 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(239, 205, 228);
+    background-color: grey;
     max-width: 1200px;
     margin: 20px auto;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(215, 62, 62, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .slider-container {
@@ -30,7 +30,7 @@ body {
 
 .slider {
     position: relative;
-    height: 400px;
+    height: 300px;
     overflow: hidden;
 }
 
@@ -51,7 +51,7 @@ body {
     border: none;
     padding: 10px 20px;
     cursor: pointer;
-    font-size: 30px;
+    font-size: 24px;
     border-radius: 4px;
 }
 
@@ -65,7 +65,7 @@ body {
 
 .info-container {
     flex: 1;
-    background-color: rgb(245, 236, 245);
+    background-color: white;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -79,9 +79,8 @@ body {
 }
 
 .info-container p {
-    font-family: 'PT Sans', sans-serif;
-    line-height: 2;
-    font-size: medium;
+    font-size: 18px;
+    line-height: 1.6;
 }
 
 
