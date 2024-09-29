@@ -30,20 +30,47 @@
         <div id="menu-bar"><i class="fas fa-bars"></i></div>
     </header>
     <!------------------------services-------------------->
-    <section class="service" id="service">
-
-        <div class="container">
-            <div class="text-content">
-                <h1>Guaranteed price and clear timelines</h1>
-                <p>
-                    We charge per feature, with everything defined before the app development process starts. Plus, we give you clear timelines upfront, meaning nothing spirals out of control down the line.
-                </p>
-            </div>
-            <div class="image-content">
-                <img src="img/ABbirth.jpg" alt="Sample Image">
+    <div class="container">
+        <div class="slider-container">
+            <div class="slider">
+                <img src="image1.jpg" alt="Image 1" class="slider-img">
+                <img src="image2.jpg" alt="Image 2" class="slider-img">
+                <img src="image3.jpg" alt="Image 3" class="slider-img">
             </div>
         </div>
-    </section>
+        <div class="info-container">
+            <h2>Image Information</h2>
+            <p id="image-info">Description of Image 1</p>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for Image Slider
+        const images = document.querySelectorAll('.slider-img');
+        const infoText = document.getElementById('image-info');
+        const imageInfo = [
+            'Description of Image 1',
+            'Description of Image 2',
+            'Description of Image 3'
+        ];
+
+        let currentIndex = 0;
+
+        function showImage(index) {
+            images.forEach((img, i) => {
+                img.style.display = (i === index) ? 'block' : 'none';
+            });
+            infoText.textContent = imageInfo[index];
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+        }
+
+        setInterval(nextImage, 3000); // Change image every 3 seconds
+        showImage(currentIndex);
+    </script>
     <!--------------------------------------------footer section--------------------------->
     <footer id="contact">
         <div class="container-custom">

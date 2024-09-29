@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider with Info</title>
+    <link rel="stylesheet" href="trash.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="slider-container">
+            <div class="slider">
+                <img src="img/ABganpati.jpg" alt="Image 1" class="slider-img">
+                <img src="img/ABhaldi.jpg" alt="Image 2" class="slider-img">
+                <img src="img/ABdecor.jpg" alt="Image 3" class="slider-img">
+            </div>
+            <button class="arrow left-arrow">&#9664;</button>
+            <button class="arrow right-arrow">&#9654;</button>
+        </div>
+        <div class="info-container">
+            <h2>Image Information</h2>
+            <p id="image-info"></p>
+            With over [X] years of experience in creating stunning festival events, [Your Event Planning Company] has perfected the art of blending tradition with modern elegance. We've had the pleasure of designing and managing celebrations for festivals like Diwali,
+            Holi, Christmas, Eid, and more, each tailored to our clients' udgwe gjsbjns dfenfehefs cwefhw sdfhc sdfhvnbdfhgew vbnhebsvgh wevbhwecgdchgwefs chgwfvnsdw vjwdsdnchdnique preferences. Our team ensures that every event is not just visually stunning
+            but also seamlessly executed, so you can enjoy the festivities without any stress. Let us turn your next festival into a vibrant, unforgettable experience!"Lorem ipsum dolor sit amet, consectetur adipisicing elitin accusamus esse perspiciatis
+            odio illo libero ad itaque quam mollitia ex fuga consequuntur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, voluptatibus voluptatem vel laudantium totam accusamus cupiditate atque quis vero culpa natus officiis odit
+            hic ex maxime sint. Sunt, libero quasi? Lorem ipsum dol nulla quisquam, sapiente perspiciatis ipsum beatae? Placeat fugiat nesciunt commodi mollitia excepturi.
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for Image Slider with Arrows
+        const images = document.querySelectorAll('.slider-img');
+        const infoText = document.getElementById('image-info');
+        const leftArrow = document.querySelector('.left-arrow');
+        const rightArrow = document.querySelector('.right-arrow');
+
+        /*const imageInfo = [
+        'Description of Image 1',
+        'Description of Image 2',
+        'Description of Image 3'
+        ]; */
+
+
+        let currentIndex = 0;
+
+        function showImage(index) {
+            images.forEach((img, i) => {
+                img.style.display = (i === index) ? 'block' : 'none';
+            });
+            infoText.textContent = imageInfo[index];
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage(currentIndex);
+        }
+
+        rightArrow.addEventListener('click', nextImage);
+        leftArrow.addEventListener('click', prevImage);
+
+        // Initialize with the first image
+        showImage(currentIndex);
+    </script>
+</body>
+
+</html>
