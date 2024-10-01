@@ -239,9 +239,11 @@
                 .head {
                     display: flex;
                     justify-content: space-between;
-                    flex-direction: row; /* Arrange in a single row */
+                    flex-direction: row;
+                    /* Arrange in a single row */
                     align-items: center;
-                    padding: 10px 20px; /* Adjust padding */
+                    padding: 10px 20px;
+                    /* Adjust padding */
                 }
 
                 /* Logo Styling align to left */
@@ -254,12 +256,14 @@
 
                 /* Adjust Button (Register Yourself) for Mobile */
                 .btn-custom1 {
-                    flex: 1;
-                    /* margin-top: 1rem; */
-                    /* width: 100%; */
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    font-size: 1.4rem;
+                    padding: 10px 20px;
                     text-align: center;
-                    margin-left: 0;
-                    margin-right: 0;
+                    z-index: 1000;
+                    /* Make sure it stays visible */
                 }
 
 
@@ -276,9 +280,18 @@
 
                 /* Adjust Navbar for Mobile (already done) */
                 .navbar-custom {
-                    margin-top: 1rem;
+                    margin-top: 0.1rem;
                     width: 100%;
                     display: none;
+                    /* new */
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    right: 0;
+                    background-color: var(--clr1);
+                    flex-direction: column;
+                    display: none;
+                    align-items: flex-start;
                 }
 
                 .head .navbar-custom.active {
@@ -287,18 +300,39 @@
 
                 /* Align hamburger menu to the right */
                 #menu-bar {
-                    flex: 1;
-                    display: flex;
-                    justify-content: flex-end;
+                    display: block;
+                    position: absolute;
+                    right: 20px;
+                    /* Align to the right */
+                    top: 50%;
+                    transform: translateY(-50%);
                     font-size: 2.5rem;
                     cursor: pointer;
                     color: var(--clr3);
-                    padding-left: 5rem;
                 }
 
                 .head .navbar-custom a {
                     padding: 1rem 2rem;
                     width: 100%;
+                }
+
+                /* Additional styling for cross icon */
+                #menu-bar.active .fa-bars {
+                    display: none;
+                    /* Hide the bars when the menu is active */
+                }
+
+                #menu-bar.active .fa-times {
+                    display: block;
+                    /* Show the cross icon */
+                }
+
+                .fa-times {
+                    display: none;
+                    /* Initially hidden */
+                }
+                .navbar-custom.active {
+                    display: block;
                 }
             }
 
