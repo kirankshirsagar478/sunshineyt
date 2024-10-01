@@ -416,24 +416,20 @@
     };
 </script>
 <script>
-    // Toggle the navbar menu on mobile screens
-    document.querySelector('#menu-bar').onclick = () => {
-        document.querySelector('.navbar-custom').classList.toggle('active');
+    document.querySelector('#menu-bar').onclick = function () {
+        let navbar = document.querySelector('.navbar-custom');
+        let menuIcon = document.querySelector('#menu-bar i');
+
+        navbar.classList.toggle('active');
+
+        if (navbar.classList.contains('active')) {
+            menuIcon.classList.remove('fa-bars');
+            menuIcon.classList.add('fa-times');
+        } else {
+            menuIcon.classList.remove('fa-times');
+            menuIcon.classList.add('fa-bars');
+        }
     };
 </script>
-<script>document.querySelector('#menu-bar').onclick = function() {
-    let navbar = document.querySelector('.navbar-custom');
-    let menuIcon = document.querySelector('#menu-bar i');
-    
-    navbar.classList.toggle('active');
-    
-    if(navbar.classList.contains('active')) {
-        menuIcon.classList.remove('fa-bars');
-        menuIcon.classList.add('fa-times');
-    } else {
-        menuIcon.classList.remove('fa-times');
-        menuIcon.classList.add('fa-bars');
-    }
-};
-</script>
+
 </html>
