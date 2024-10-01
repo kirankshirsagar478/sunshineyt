@@ -1,0 +1,3 @@
+add class = "section-custom" in all section all pages --> IMP
+style.css .containerS changed form container
+
