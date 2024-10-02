@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Event Planner</title>
+    <title>Event-----Planner</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
@@ -27,7 +27,6 @@
         </nav>
         <div id="menu-bar"><i class="fas fa-bars"></i></div>
     </header>
-
     <!------------------------services-------------------->
     <section class="section-custom service" id="service">
         <div class="title text-center">
@@ -74,14 +73,8 @@
                     </div>
                 </form>
             </div>
-
-            <!-- Table to display the form data -->
-            <div class="row justify-content-center">
-                <div id="displayData" class="col-md-8 mt-4"></div>
-            </div>
         </div>
     </section>
-
     <!--------------------------------------------footer section--------------------------->
     <footer id="contact">
         <div class="container-custom">
@@ -119,118 +112,179 @@
     <div class=" copyright ">
         <p>Copyright ©2022 All Rights Reserved | Knowledge Place KP</p>
     </div>
-
-    <script>
-        // Function to validate and get form data
-        function validateAndGetFormData() {
-            var stuIdVar = $("#stuId").val();
-            if (stuIdVar === "") {
-                alert("Student Roll-No is Required");
-                $("#stuId").focus();
-                return "";
-            }
-            var stuNameVar = $("#stuName").val();
-            if (stuNameVar === "") {
-                alert("Student Name is Required");
-                $("#stuName").focus();
-                return "";
-            }
-            var stuClassVar = $("#stuClass").val();
-            if (stuClassVar === "") {
-                alert("Student Class is Required");
-                $("#stuClass").focus();
-                return "";
-            }
-
-            var stuDOBVar = $("#stuDOB").val();
-            if (stuDOBVar === "") {
-                alert("Student Birth-Date is Required");
-                $("#stuDOB").focus();
-                return "";
-            }
-
-            var stuAddressVar = $("#stuAddress").val();
-            if (stuAddressVar === "") {
-                alert("Student Address is Required");
-                $("#stuAddress").focus();
-                return "";
-            }
-
-            var stuEnrollDateVar = $("#stuEnrollDate").val();
-            if (stuEnrollDateVar === "") {
-                alert("Student Enrollment-Date is Required");
-                $("#stuEnrollDate").focus();
-                return "";
-            }
-
-            var jsonStrObj = {
-                stuId: stuIdVar,
-                stuName: stuNameVar,
-                stuClass: stuClassVar,
-                stuDOB: stuDOBVar,
-                stuAddress: stuAddressVar,
-                stuEnrollDate: stuEnrollDateVar,
-            };
-            return JSON.stringify(jsonStrObj);
-        }
-
-        // Function to reset the form
-        function resetForm() {
-            $("#stuId").val("");
-            $("#stuName").val("");
-            $("#stuClass").val("");
-            $("#stuDOB").val("");
-            $("#stuAddress").val("");
-            $("#stuEnrollDate").val("");
-            $("#stuId").focus();
-        }
-
-        // Function to save data and display it in the table
-        function saveData() {
-            var jsonStr = validateAndGetFormData();
-            if (jsonStr === "") {
-                return;
-            }
-
-            // Parse the JSON string back to object
-            var formData = JSON.parse(jsonStr);
-
-            // Create a table to display the data
-            var table = `<table class="table table-bordered">
-                <tr>
-                    <th>Roll-No</th>
-                    <td>${formData.stuId}</td>
-                </tr>
-                <tr>
-                    <th>Full Name</th>
-                    <td>${formData.stuName}</td>
-                </tr>
-                <tr>
-                    <th>Class</th>
-                    <td>${formData.stuClass}</td>
-                </tr>
-                <tr>
-                    <th>Birth-Date</th>
-                    <td>${formData.stuDOB}</td>
-                </tr>
-                <tr>
-                    <th>Address</th>
-                    <td>${formData.stuAddress}</td>
-                </tr>
-                <tr>
-                    <th>Enrollment-Date</th>
-                    <td>${formData.stuEnrollDate}</td>
-                </tr>
-            </table>`;
-
-            // Display the table inside the "displayData" div
-            $("#displayData").html(table);
-
-            // Reset the form
-            resetForm();
-        }
-    </script>
-
 </body>
+
+<script>
+    let menu = document.querySelector('#menu-bar');
+    let head = document.querySelector('.head .navbar');
+
+    menu.onclick = () => {
+        head.classList.toggle('active');
+    };
+
+    window.onscroll = () => {
+        head.classList.remove('active');
+        if (window.scrollY > 60) {
+            document.querySelector('#menu-bar').classList.add('active');
+        } else {
+            document.querySelector('#menu-bar').classList.remove('active');
+        }
+    };
+</script>
+<script>
+    function validateAndGetFormData() {
+        var stuIdVar = $("#stuId").val();
+        if (stuIdVar === "") {
+            alert("Student Roll-No Required Value");
+            $("#stuId").focus();
+            return "";
+        }
+        var stuNameVar = $("#stuName").val();
+        if (stuNameVar === "") {
+            alert("Student Name is Required Value");
+            $("#stuName").focus();
+            return "";
+        }
+        var stuClassVar = $("#stuClass").val();
+        if (stuClassVar === "") {
+            alert("Student Class is Required Value");
+            $("#stuClass").focus();
+            return "";
+        }
+
+        var stuDOBVar = $("#stuDOB").val();
+        if (stuDOBVar === "") {
+            alert("Student Birth-Date is Required Value");
+            $("stuDOB").focus();
+            return "";
+        }
+
+        var stuAddressVar = $("#stuAddress").val();
+        if (stuAddressVar === "") {
+            alert("Student Address is Required Value");
+            $("#stuAddress").focus();
+            return "";
+        }
+
+        var stuEnrollDateVar = $("stuEnrollDate").val();
+        if (stuEnrollDateVar === "") {
+            alert("Student Enrollment-Date is Required Value");
+            $("stuEnrollDate").focus();
+            return "";
+        }
+
+        var jsonStrObj = {
+            stuId: stuIdVar,
+            stuName: stuNameVar,
+            stuClass: stuClassVar,
+            stuDOB: stuDOBVar,
+            stuAddress: stuAddressVar,
+            stuEnrollDate: stuEnrollDateVar,
+        };
+        return JSON.stringify(jsonStrObj);
+    }
+
+    function getstuIdASJsonObj() {
+        var stuid = $("#stuid").val();
+        var jsonStr = {
+            id: stuid,
+        };
+        return JSON.stringify(jsonStr);
+    }
+
+    function getStu() {
+        var stuIdJsonObj = getstuIdASJsonObj();
+        var getRequest = createGET_BY_KEYRequest(
+            connToken,
+            stuDBName,
+            stuRelationName,
+            stuIdJsonObj
+        );
+        jQuery.ajaxSetup({ async: false });
+        var resJsonObj = executeCommandAtGivenBaseUrl(
+            getRequest,
+            jpdbBaseURL,
+            jpdbURL
+        );
+        jQuery.ajaxSetup({ async: true });
+        if (resJsonObj.status === 400) {
+            $("#save").prop("disabled", flase);
+            $("#reset").prop("disabled", false);
+            $("#stuname").focus();
+        } else if (resJsonObj.status === 200) {
+            $("#stuid").prop("disabled", true);
+            fillData(resJsonObj);
+            $("#change").prop("disabled", false);
+            $("#reset").prop("disabled", false);
+            $("#stuname").focus();
+        }
+    }
+
+    function resetForm() {
+        $("#stuId").val("");
+        $("#stuName").val("");
+        $("#stuClass").val("");
+        $("#stuDOB").val("");
+        $("#stuAddress").val("");
+        $("#stuEnrollDate").val("");
+        $("#stuId").focus();
+    }
+
+    function changeData() {
+        $("#change").prop("disabled", true);
+        jsonChg = validateData();
+        var updateRequest = createUPDATERecordRequest(
+            ConnToken,
+            jsonChg,
+            stuDBName,
+            stuRelationName,
+            localStorage.getItem("recno")
+        );
+        jQuery.ajaxSetup({ async: falses });
+        var resJsonObj = executeCommandAtGivenBaseUrl(
+            updateRequest.jpdBaseURL,
+            jpdbIML
+        );
+        jQuery.ajaxSetup({ async: true });
+        console.log(resJsonObj);
+        resetForm();
+        $("#stuID").focus();
+    }
+
+    function saveData() {
+        // validate form data
+
+        // create JPDB request string - token , dbname , relation name ...
+
+        // Execute this request
+
+        //Reset the form data
+
+        var jsonStr = validateAndGetFormData();
+        if (jsonStr === "") {
+            return;
+        }
+        var putReqStr = createPUTRequest(
+            "90932145|-31949221247820323|90963815",
+            jsonStr,
+            "SCHOOL-DB",
+            "STUDENT-TABLE"
+        );
+
+        alert(putReqStr);
+
+        jQuery.ajaxSetup({ async: false });
+        var resultObj = executeCommandAtGivenBaseUrl(
+            putReqStr,
+            "http://api.login2explore.com:5577",
+            "/api/iml"
+        );
+        jQuery.ajaxSetup({ async: true });
+
+        alert(JSON.stringify(resultObj));
+        resetForm();
+    }
+</script>
+
 
 </html>
