@@ -50,6 +50,12 @@
                         <input type="number" class="form-control" id="mobile" placeholder="Enter your mobile number" name="mobile" required pattern="[0-9]{10}" />
                     </div>
 
+                    <!-- Email ID -->
+                    <div class="form-group">
+                        <label for="email">Email ID:</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter your email" name="email" required />
+                    </div>
+
                     <!-- Event Date -->
                     <div class="form-group">
                         <label for="eventDate">Event Date:</label>
@@ -72,11 +78,31 @@
                     <div class="form-group">
                         <label for="category">Select Event Category:</label>
                         <select class="form-control" id="category" name="category" required>
-                            <option disabled selected>Select Category</option>
+                            <option disabled selected>Select Service Category</option>
                             <option value="basic">Basic Service</option>
                             <option value="moderate">Moderate Service</option>
                             <option value="premium">Premium Service</option>
                         </select>
+                    </div>
+
+                    <!-- Event Location -->
+                    <div class="form-group">
+                        <label for="location">Event Location:</label>
+                        <select class="form-control" id="location" name="location" required>
+                            <option disabled selected>Select Location</option>
+                            <option value="Pimpri Chinchwad">Pimpri Chinchwad</option>
+                            <option value="Hinjewadi">Hinjewadi</option>
+                            <option value="Warje">Warje</option>
+                            <option value="Nigadi">Nigadi</option>
+                            <option value="Karvenagar">Karvenagar</option>
+                            <option value="Katraj">Katraj</option>
+                        </select>
+                    </div>
+
+                    <!-- Address -->
+                    <div class="form-group">
+                        <label for="address">Address:</label>
+                        <textarea class="form-control" id="address" placeholder="Enter your address" name="address" required></textarea>
                     </div>
 
                     <!-- Buttons -->
@@ -90,14 +116,15 @@
         </div>
     </section>
 
-    <!-- Footer (from index.html) -->
+    <!-- Footer and other sections here -->
     <footer id="contact">
         <div class="container-custom">
             <div class="f-container-custom">
                 <h2>Sunshine Event - Your Personal Wedding Planner</h2><br>
                 <p>Plan your wedding with Us SunShine is an Indian Wedding Planning Website </p>
                 <div>
-                    <button class="btn-custom" ondblclick="window.location.href='registration.html'">Register as a Client</button>
+                    <button class="btn-custom " ondblclick="window.location.href='registration.html'">Register as a
+                        Client</button>
                 </div>
                 <div class="social">
                     <i class="fab fa-facebook"></i>
@@ -109,30 +136,29 @@
             </div>
             <div class="f-container-custom">
                 <h2>Our Location in Pune</h2>
-                <a href="# "><i class="fas fa-angle-right"></i>Pimpri Chinchwad</a>
-                <a href="# "><i class="fas fa-angle-right"></i>Hinjewadi</a>
-                <a href="# "><i class="fas fa-angle-right"></i>Warje</a>
-                <a href=" # "><i class=" fas fa-angle-right"></i>Nigadi</a>
-                <a href=" # "><i class=" fas fa-angle-right"></i>Karvenagar</a>
-                <a href=" # "><i class=" fas fa-angle-right"></i>Katraj</a>
+                <a href="#"><i class="fas fa-angle-right"></i>Pimpri Chinchwad</a>
+                <a href="#"><i class="fas fa-angle-right"></i>Hinjewadi</a>
+                <a href="#"><i class="fas fa-angle-right"></i>Warje</a>
+                <a href="#"><i class=" fas fa-angle-right"></i>Nigadi</a>
+                <a href="#"><i class=" fas fa-angle-right"></i>Karvenagar</a>
+                <a href="#"><i class=" fas fa-angle-right"></i>Katraj</a>
             </div>
 
-            <div class=" f-container-custom">
+            <div class="f-container-custom">
                 <h2>Address</h2>
                 <p>Office Address: Sunshine Events Office, Samarth Heights, Lane No 5, Jadhavwadi, Pimpri Chinchwad, Pune-412105
                 </p>
                 <p>Contact Us :</p>
                 <input type="text" placeholder="Enter your Location"><br><br>
-                <input type="text" placeholder="Enter Your Email">
+                <input type="text" placeholder="Enter Contact Reason"><br><br>
+                <input type="email" placeholder="Enter Your Email">
                 <button class="btn-custom">Enter</button>
             </div>
         </div>
-        
     </footer>
     <div class="copyright">
-        <p>Copyright ©2024 All Rights Reserved | Sunshine Events</p>
+        <p>Copyright ©2024 All Rights Reserved </p>
     </div>
-
     <script>
         // Navbar toggle script
         document.querySelector('#menu-bar').onclick = function() {
@@ -152,49 +178,31 @@
     </script>
 
     <script>
-        // Form validation and data handling script from registration.html
+        // Updated form validation and data handling
         function validateAndGetFormData() {
             var nameVar = $("#name").val();
-            if (nameVar === "") {
-                alert("Full Name is required.");
-                $("#name").focus();
-                return "";
-            }
-
             var mobileVar = $("#mobile").val();
-            if (mobileVar === "") {
-                alert("Mobile number is required.");
-                $("#mobile").focus();
-                return "";
-            }
-
+            var emailVar = $("#email").val();
             var eventDateVar = $("#eventDate").val();
-            if (eventDateVar === "") {
-                alert("Event Date is required.");
-                $("#eventDate").focus();
-                return "";
-            }
-
             var eventVar = $("#event").val();
-            if (eventVar === null) {
-                alert("Please select an Event.");
-                $("#event").focus();
-                return "";
-            }
-
             var categoryVar = $("#category").val();
-            if (categoryVar === null) {
-                alert("Please select a Category.");
-                $("#category").focus();
+            var locationVar = $("#location").val();
+            var addressVar = $("#address").val();
+
+            if (nameVar === "" || mobileVar === "" || emailVar === "" || eventDateVar === "" || eventVar === null || categoryVar === null || locationVar === null || addressVar === "") {
+                alert("Please fill all required fields.");
                 return "";
             }
 
             var jsonStrObj = {
                 name: nameVar,
                 mobile: mobileVar,
+                email: emailVar,
                 eventDate: eventDateVar,
                 event: eventVar,
                 category: categoryVar,
+                location: locationVar,
+                address: addressVar
             };
             return JSON.stringify(jsonStrObj);
         }
@@ -227,46 +235,13 @@
         function resetForm() {
             $("#name").val("");
             $("#mobile").val("");
+            $("#email").val("");
             $("#eventDate").val("");
             $("#event").val("");
             $("#category").val("");
+            $("#location").val("");
+            $("#address").val("");
             $("#name").focus();
-        }
-
-        function getFormIdAsJsonObj() {
-            var name = $("#name").val();
-            var jsonStr = {
-                id: name,
-            };
-            return JSON.stringify(jsonStr);
-        }
-
-        function getFormData() {
-            var formIdJsonObj = getFormIdAsJsonObj();
-            var getRequest = createGET_BY_KEYRequest(
-                connToken,
-                dbName,
-                relationName,
-                formIdJsonObj
-            );
-            jQuery.ajaxSetup({ async: false });
-            var resJsonObj = executeCommandAtGivenBaseUrl(
-                getRequest,
-                jpdbBaseURL,
-                jpdbURL
-            );
-            jQuery.ajaxSetup({ async: true });
-            if (resJsonObj.status === 400) {
-                $("#save").prop("disabled", false);
-                $("#reset").prop("disabled", false);
-                $("#name").focus();
-            } else if (resJsonObj.status === 200) {
-                $("#name").prop("disabled", true);
-                fillData(resJsonObj);
-                $("#change").prop("disabled", false);
-                $("#reset").prop("disabled", false);
-                $("#name").focus();
-            }
         }
     </script>
 </body>
