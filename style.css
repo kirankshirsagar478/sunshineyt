@@ -83,7 +83,7 @@
                         }
                         
                         .btn-customS {
-                            margin-top: 1rem;
+                            align-items: center;
                             padding: 1.4rem 3rem;
                             font-size: 1.5rem;
                             text-transform: capitalize;
