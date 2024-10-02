@@ -280,7 +280,7 @@
                                 top: 100%;
                                 left: 0;
                                 right: 0;
-                                background-color: var(--clr1);
+                                background-color: var(--clr2);
                                 flex-direction: column;
                                 align-items: flex-start;
                                 display: none;
@@ -549,7 +549,7 @@
                         .vendor .vendor-row {
                             max-width: 1300px;
                             background: rgb(245, 236, 245);
-                            height: 35rem;
+                            height: 40rem;
                             flex: 1 1 30rem;
                             padding: 1.2rem;
                             margin: 1.5rem;
