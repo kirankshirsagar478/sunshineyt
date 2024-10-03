@@ -688,10 +688,108 @@
                             transform: translateY(-2rem);
                         }
                         
+                        .invite .invitation-row .invitation-box img {
+                            height: 100%;
+                            width: 100%;
+                            object-fit: cover;
+                            /* Ensures the image fits inside the card */
+                            cursor: pointer;
+                            /* Makes the image clickable */
+                        }
+                        
                         .invite .invitation-row .invitation-box p {
                             height: 100%;
                             width: 100%;
                             /*object-fit: cover;*/
+                        }
+                        
+                        .modal {
+                            display: none;
+                            /* Hidden by default */
+                            position: fixed;
+                            /* Stay in place */
+                            z-index: 1000;
+                            /* Sit on top */
+                            left: 0;
+                            top: 0;
+                            width: 100%;
+                            /* Full width */
+                            height: 100%;
+                            /* Full height */
+                            overflow: auto;
+                            /* Enable scroll if needed */
+                            background-color: rgba(0, 0, 0, 0.8);
+                            /* Black background with opacity */
+                        }
+                        
+                        .modal-content {
+                            margin: auto;
+                            display: block;
+                            width: 80%;
+                            max-width: 700px;
+                        }
+                        
+                        .modal-content img {
+                            width: 100%;
+                        }
+                        
+                        .close {
+                            position: absolute;
+                            top: 15px;
+                            right: 35px;
+                            color: white;
+                            font-size: 40px;
+                            font-weight: bold;
+                            transition: 0.3s;
+                        }
+                        
+                        .close:hover,
+                        .close:focus {
+                            color: #bbb;
+                            text-decoration: none;
+                            cursor: pointer;
+                        }
+                        /* ----------- Media Query for Mobile Devices ----------- */
+                        
+                        @media (max-width: 768px) {
+                            /* For tablet and mobile devices, reduce card size and make it 100% width */
+                            .invite .invitation-row .invitation-box {
+                                flex: 1 1 100%;
+                                /* Full-width cards */
+                                height: auto;
+                                /* Adjust height based on image and content */
+                                margin: 0.5rem;
+                                /* Reduce margin for mobile */
+                                padding: 1rem;
+                                /* Reduce padding for mobile */
+                            }
+                            /* Ensure images still fill the cards while maintaining aspect ratio */
+                            .invite .invitation-row .invitation-box img {
+                                width: 100%;
+                                height: auto;
+                                /* Allow images to resize naturally */
+                                object-fit: cover;
+                            }
+                            /* Reduce the width of the modal content for smaller screens */
+                            .modal-content {
+                                width: 90%;
+                                /* Make the modal image more mobile-friendly */
+                            }
+                            /* Make close button smaller */
+                            .close {
+                                font-size: 30px;
+                            }
+                        }
+                        /* Further media queries for very small devices (e.g., small phones) */
+                        
+                        @media (max-width: 480px) {
+                            .invite .invitation-row .invitation-box {
+                                padding: 0.5rem;
+                            }
+                            .modal-content {
+                                width: 95%;
+                                /* Maximize modal image size for small screens */
+                            }
                         }
                         /*---------------------------footer .section-custom-------------*/
                         

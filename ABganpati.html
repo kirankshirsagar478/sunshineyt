@@ -36,45 +36,47 @@
         </div>
         <div class="invitation-row ">
             <div class="invitation-box ">
-                <!--img src="img/card-1.jpg " alt=" "-->
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero corrupti expedita sit quam sapiente. Officia aut, eos ratione reiciendis qui consequatur voluptatem, officiis praesentium libero blanditiis corporis, non optio quia.
-                </p>
+                <img src="img/haldi1.jpg " alt=" " onclick="openModal(this)">
             </div>
             <div class="invitation-box ">
-                <img src="img/card-2.jpg " alt=" ">
+                <img src="img/haldi2.jpg " alt=" " onclick="openModal(this)">
             </div>
             <div class="invitation-box ">
-                <img src="img/card-3.jpg " alt=" ">
+                <img src="img/haldi3.jpg " alt=" " onclick="openModal(this)">
             </div>
             <div class="invitation-box ">
-                <img src="img/card-4.jpg " alt=" ">
+                <img src="img/haldi4.jpg " alt=" " onclick="openModal(this)">
             </div>
             <div class="invitation-box ">
-                <img src="img/card-5.jpg " alt=" ">
+                <img src="img/haldi5.jpg " alt=" " onclick="openModal(this)">
             </div>
             <div class="invitation-box ">
-                <img src="img/card-6.jpg " alt=" ">
+                <img src="img/haldi6.jpg " alt=" " onclick="openModal(this)">
             </div>
             <div class="invitation-box ">
-                <img src="img/card-7.jpg " alt=" ">
+                <img src="img/haldi7.jpg " alt=" " onclick="openModal(this)">
             </div>
             <div class="invitation-box ">
-                <img src="img/card-8.jpg " alt=" ">
+                <img src="img/haldi8.jfif " alt=" " onclick="openModal(this)">
             </div>
             <div class="invitation-box ">
-                <img src="img/card-9.jpg " alt=" ">
+                <img src="img/haldi9.jfif " alt=" " onclick="openModal(this)">
             </div>
             <div class="invitation-box ">
-                <img src="img/card-10.jpg " alt=" ">
+                <img src="img/haldi10.jfif " alt=" " onclick="openModal(this)">
             </div>
             <div class="invitation-box ">
-                <img src="img/card-11.jpg " alt=" ">
+                <img src="img/haldi11.jfif " alt=" " onclick="openModal(this)">
             </div>
             <div class="invitation-box ">
-                <img src="img/card-12.jpg " alt=" ">
+                <img src="img/haldi12.jfif " alt=" " onclick="openModal(this)">
             </div>
         </div>
     </section>
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage" onclick="closeModal()">
+    </div>
     <!--------------------------------------------footer section--------------------------->
     <footer id="contact">
         <div class="container-custom">
@@ -133,6 +135,18 @@
             document.querySelector('#menu-bar').classList.remove('active');
         }
     };
+
+    function openModal(imgElement) {
+        var modal = document.getElementById("imageModal");
+        var modalImg = document.getElementById("modalImage");
+        modal.style.display = "block";
+        modalImg.src = imgElement.src; // Set the modal image source
+    }
+
+    function closeModal() {
+        var modal = document.getElementById("imageModal");
+        modal.style.display = "none"; // Hide the modal
+    }
 </script>
 
 </html>
