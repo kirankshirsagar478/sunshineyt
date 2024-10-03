@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rituals Decoration</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <header class="head">
+        <a href="#" class="logo">
+            <img src="img/logo.jpg" alt="Logo" class="logo-img">
+        </a>
+        <nav class="navbar-custom">
+            <a href="#" class="active">Home</a>
+            <a href="#Aboutevents">About Events</a>
+            <a href="#vendor">Featured Events</a>
+            <a href="#invite">About Us</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <button class="btn-custom1" onclick="window.location.href='registration.html'">Register Yourself</button>
+        <div id="menu-bar"><i class="fas fa-bars"></i></div>
+    </header>
+
+    <!------------------------container code-------------------->
+    <section class="section-custom service" id="service">
+        <div class="title text-center">
+            <h1><span>R</span>ituals <span>D</span>ecoration</h1>
+        </div>
+
+        <div class="containerS">
+            <div class="slider-container">
+                <div class="slider">
+                    <img src="img/haldi7.jpg" alt="Image 1" class="slider-img">
+                    <img src="img/haldi6.jpg" alt="Image 2" class="slider-img">
+                    <img src="img/haldi4.jpg" alt="Image 3" class="slider-img">
+                </div>
+                <button class="arrow left-arrow">&#9664;</button>
+                <button class="arrow right-arrow">&#9654;</button>
+            </div>
+            <div class="info-container">
+                <h2> Rituals Decoration Options </h2>
+                <p id="image-info"></p>
+                As an event planner, we transform your Haldi, Pooja, Mehndi ceremonies into unforgettable experiences with beautiful, customized decorations.
+                <br> <br>
+                <b>Choose Your Service:</b></br>
+                <b id="text">1. Basic- Simple Elegance</b><br>Minimal floral décor <br>Traditional backdrops Affordable <br><br>
+                <b id="text">2. Moderate -Stylish & Sophisticated</b><br> Ambient lighting <br>Mid-range<br><br>
+                <b id="text">3. Premium - Lavish & Luxurious</b> <br>Designer themes
+                <br> High-end <br><b>Let us bring your vision to life with the perfect package for your budget! </b>
+            </div>
+        </div>
+
+
+        <script>
+            // JavaScript for Image Slider with Arrows
+            const images = document.querySelectorAll('.slider-img');
+            const infoText = document.getElementById('image-info');
+            const leftArrow = document.querySelector('.left-arrow');
+            const rightArrow = document.querySelector('.right-arrow');
+            let currentIndex = 0;
+
+            function showImage(index) {
+                images.forEach((img, i) => {
+                    img.style.display = (i === index) ? 'block' : 'none';
+                });
+                infoText.textContent = imageInfo[index];
+            }
+
+            function nextImage() {
+                currentIndex = (currentIndex + 1) % images.length;
+                showImage(currentIndex);
+            }
+
+            function prevImage() {
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                showImage(currentIndex);
+            }
+
+            rightArrow.addEventListener('click', nextImage);
+            leftArrow.addEventListener('click', prevImage);
+            // Initialize with the first image
+            showImage(currentIndex);
+        </script>
+</body>
+</section>
+<!--------------------------------------------footer section--------------------------->
+<footer id="contact">
+    <div class="container-custom">
+        <div class="f-container-custom">
+            <h2>Sunshine Event - Your Personal Wedding Planner</h2><br>
+            <p>Plan your wedding with Us SunShine is an Indian Wedding Planning Website </p>
+            <div>
+                <button class="btn-custom" ondblclick="window.location.href='registration.html'">Register as a Client</button>
+            </div>
+            <div class="social">
+                <i class=" fab fa-facebook "></i>
+                <i class="fab fa-instagram "></i>
+                <i class="fab fa-linkedin "></i>
+                <i class="fab fa-twitter "></i>
+                <i class="fab fa-pinterest "></i>
+            </div>
+        </div>
+        <div class="f-container-custom ">
+            <h2>Our Location in Pune</h2>
+            <a href="# "><i class="fas fa-angle-right "></i>Hinjewadi</a>
+            <a href="# "><i class="fas fa-angle-right "></i>Warje</a>
+            <a href="# "><i class="fas fa-angle-right "></i>Nigadi</a>
+            <a href="# "><i class="fas fa-angle-right "></i>Karvenagar</a>
+            <a href="# "><i class="fas fa-angle-right "></i>Katraj</a>
+        </div>
+        <div class=" f-container-custom ">
+            <h2>Address</h2>
+            <p>Office Address: Sunshine Events Office, Samarth Heights, Lane No 5, Jadhavwadi, Pimpri Chinchwad, Pune-412105</p>
+            <p>Contact Us :</p>
+            <input type="text " placeholder="Enter your Location "><br><br>
+            <input type="text " placeholder="Enter Your Email ">
+            <button class="btn-custom ">Enter</button>
+        </div>
+    </div>
+</footer>
+<div class="copyright ">
+    <p>Copyright ©2022 All Rights Reserved</p>
+</div>
+<script>
+    let menu = document.querySelector('#menu-bar');
+    let head = document.querySelector('.head .navbar');
+
+    menu.onclick = () => {
+        head.classList.toggle('active');
+    };
+
+    window.onscroll = () => {
+        head.classList.remove('active');
+        if (window.scrollY > 60) {
+            document.querySelector('#menu-bar').classList.add('active');
+        } else {
+            document.querySelector('#menu-bar').classList.remove('active');
+        }
+    };
+</script>
+
+
+</html>

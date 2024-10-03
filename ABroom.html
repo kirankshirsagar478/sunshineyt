@@ -2,15 +2,14 @@
 <html lang="en">
 
 <head>
-    <title>Event-----Planner</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dreamy Decoration</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script src="https://login2explore.com/jpdb/resources/js/0.0.3/jpdb-commons.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
 <body>
@@ -20,20 +19,63 @@
         </a>
         <nav class="navbar-custom">
             <a href="#" class="active">Home</a>
-            <a href="#vendor">Service</a>
-            <a href="#service">Gallery</a>
             <a href="#Aboutevents">About Events</a>
+            <a href="#vendor">Featured Events</a>
+            <a href="#invite">About Us</a>
             <a href="#contact">Contact</a>
         </nav>
         <button class="btn-custom1" onclick="window.location.href='registration.html'">Register Yourself</button>
         <div id="menu-bar"><i class="fas fa-bars"></i></div>
     </header>
     <!------------------------services-------------------->
-    <section class="section-custom service" id="service">
-        <div class="title text-center">
-            <h1><span>R</span>egister Yourself</h1>
+    <section class="section-custom invite " id="invite ">
+        <div class="title ">
+            <h1> <span>D</span>reamy<span>  D</span>ecoration</h1>
+            <!--p>Choose the best card Design.</p-->
+        </div>
+        <div class="invitation-row ">
+            <div class="invitation-box ">
+                <img src="img/dr1.jpg " alt=" " onclick="openModal(this)">
+            </div>
+            <div class="invitation-box ">
+                <img src="img/dr2.jpg " alt=" " onclick="openModal(this)">
+            </div>
+            <div class="invitation-box ">
+                <img src="img/dr3.jfif " alt=" " onclick="openModal(this)">
+            </div>
+            <div class="invitation-box ">
+                <img src="img/dr4.jfif " alt=" " onclick="openModal(this)">
+            </div>
+            <div class="invitation-box ">
+                <img src="img/dr5.jpg " alt=" " onclick="openModal(this)">
+            </div>
+            <div class="invitation-box ">
+                <img src="img/dr6.jpg " alt=" " onclick="openModal(this)">
+            </div>
+            <div class="invitation-box ">
+                <img src="img/dr13.jfif " alt=" " onclick="openModal(this)">
+            </div>
+            <div class="invitation-box ">
+                <img src="img/dr8.jfif " alt=" " onclick="openModal(this)">
+            </div>
+            <div class="invitation-box ">
+                <img src="img/dr9.jfif " alt=" " onclick="openModal(this)">
+            </div>
+            <div class="invitation-box ">
+                <img src="img/dr10.jpg " alt=" " onclick="openModal(this)">
+            </div>
+            <div class="invitation-box ">
+                <img src="img/dr11.jfif " alt=" " onclick="openModal(this)">
+            </div>
+            <div class="invitation-box ">
+                <img src="img/dr15.jfif " alt=" " onclick="openModal(this)">
+            </div>
         </div>
     </section>
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage" onclick="closeModal()">
+    </div>
     <!--------------------------------------------footer section--------------------------->
     <footer id="contact">
         <div class="container-custom">
@@ -43,7 +85,7 @@
                 <div>
                     <button class="btn-custom" ondblclick="window.location.href='registration.html'">Register as a Client</button>
                 </div>
-                <div class="social ">
+                <div class="social">
                     <i class="fab fa-facebook"></i>
                     <i class="fab fa-instagram"></i>
                     <i class="fab fa-linkedin"></i>
@@ -51,17 +93,17 @@
                     <i class="fab fa-pinterest"></i>
                 </div>
             </div>
-            <div class="f-container-custom">
+            <div class="f-container-custom ">
                 <h2>Our Location in Pune</h2>
-                <a href="# "><i class="fas fa-angle-right"></i>Pimpri Chinchwad</a>
-                <a href="# "><i class="fas fa-angle-right"></i>Hinjewadi</a>
-                <a href="# "><i class="fas fa-angle-right"></i>Warje</a>
-                <a href="# "><i class=" fas fa-angle-right"></i>Nigadi</a>
-                <a href=" # "><i class=" fas fa-angle-right"></i>Karvenagar</a>
-                <a href=" # "><i class=" fas fa-angle-right"></i>Katraj</a>
+                <a href="#"><i class="fas fa-angle-right"></i>Pimpri Chinchwad</a>
+                <a href="#"><i class="fas fa-angle-right"></i>Hinjewadi</a>
+                <a href="#"><i class="fas fa-angle-right"></i>Warje</a>
+                <a href="#"><i class="fas fa-angle-right"></i>Nigadi</a>
+                <a href="#"><i class="fas fa-angle-right"></i>Karvenagar</a>
+                <a href="#"><i class="fas fa-angle-right"></i>Katraj</a>
             </div>
 
-            <div class=" f-container-custom">
+            <div class=" f-container-custom ">
                 <h2>Address</h2>
                 <p>Office Address: Sunshine Events Office, Samarth Heights, Lane No 5, Jadhavwadi, Pimpri Chinchwad, Pune-412105</p>
                 <p>Contact Us :</p>
@@ -92,6 +134,18 @@
             document.querySelector('#menu-bar').classList.remove('active');
         }
     };
+
+    function openModal(imgElement) {
+        var modal = document.getElementById("imageModal");
+        var modalImg = document.getElementById("modalImage");
+        modal.style.display = "block";
+        modalImg.src = imgElement.src; // Set the modal image source
+    }
+
+    function closeModal() {
+        var modal = document.getElementById("imageModal");
+        modal.style.display = "none"; // Hide the modal
+    }
 </script>
 
 </html>
