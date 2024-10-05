@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Registration Data</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://login2explore.com/jpdb/resources/js/0.0.3/jpdb-commons.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 8px 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .buttons-container {
+            text-align: center;
+        }
+
+        input[type="button"] {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btn-get {
+            background-color: #5bc0de;
+        }
+
+        .btn-update {
+            background-color: #5cb85c;
+        }
+
+        .btn-reset {
+            background-color: #d9534f;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Update Event Registration</h1>
+
+        <div class="form-group">
+            <label for="mobile">Mobile Number</label>
+            <div style="display: flex;">
+                <input id="mobile" maxlength="10" placeholder="Enter Mobile Number" name="mobile" type="text" />
+                <input type="button" value="Get Record" class="btn-get" onclick="fetchData();" style="margin-left: 10px;" />
+            </div>
+        </div>
+
+        <div id="formContainer" class="hidden">
+            <div class="form-group">
+                <label for="nameField">Full Name</label>
+                <input type="text" id="nameField" placeholder="Enter Full Name" />
+            </div>
+
+            <div class="form-group">
+                <label for="emailField">Email</label>
+                <input type="text" id="emailField" placeholder="Enter Email Address" />
+            </div>
+
+            <div class="form-group">
+                <label for="eventField">Event</label>
+                <input type="text" id="eventField" placeholder="Enter Event Name" />
+            </div>
+
+            <div class="form-group">
+                <label for="eventDateField">Event Date</label>
+                <input type="date" id="eventDateField" placeholder="Enter Event Date" />
+            </div>
+
+            <div class="form-group">
+                <label for="categoryField">Category</label>
+                <input type="text" id="categoryField" placeholder="Enter Category" />
+            </div>
+
+            <div class="form-group">
+                <label for="locationField">Location</label>
+                <input type="text" id="locationField" placeholder="Enter Location" />
+            </div>
+
+            <div class="buttons-container">
+                <input type="button" value="Update Record" class="btn-update" onclick="updateData();" />
+                <input type="button" value="Reset" class="btn-reset" onclick="resetForm();" />
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var recordNumber = null; // Store record number for updates
+
+        function createGETRequest(connToken, dbName, relName, jsonObjStr) {
+            var getRequest = `{
+                "token" : "${connToken}",
+                "dbName": "${dbName}",
+                "cmd" : "GET_BY_KEY",
+                "rel" : "${relName}",
+                "jsonStr": ${jsonObjStr}
+            }`;
+            return getRequest;
+        }
+
+        function executeCommand(reqString, dbBaseUrl, apiEndPointUrl) {
+            var url = dbBaseUrl + apiEndPointUrl;
+            var jsonObj;
+            $.post(url, reqString, function (result) {
+                jsonObj = JSON.parse(result);
+            }).fail(function (result) {
+                jsonObj = JSON.parse(result.responseText);
+            });
+            return jsonObj;
+        }
+
+        function fetchData() {
+            var token = "90932145|-31949221247820323|90963815";
+            var dbname = "EVENT-DB";
+            var relationName = "REGISTRATION-TABLE";
+            var mobile = document.getElementById("mobile").value;
+            var jsonStr = { mobile: mobile };
+            var reqString = createGETRequest(token, dbname, relationName, JSON.stringify(jsonStr));
+            
+            jQuery.ajaxSetup({ async: false });
+            var resultObj = executeCommand(reqString, "http://api.login2explore.com:5577", "/api/irl");
+            jQuery.ajaxSetup({ async: true });
+
+            if (resultObj.status === 200) {
+                var record = JSON.parse(resultObj.data).record;
+                recordNumber = JSON.parse(resultObj.data).rec_no;
+
+                // Populate form fields with data
+                document.getElementById("nameField").value = record.name;
+                document.getElementById("emailField").value = record.email;
+                document.getElementById("eventField").value = record.event;
+                document.getElementById("eventDateField").value = record.eventDate;
+                document.getElementById("categoryField").value = record.category;
+                document.getElementById("locationField").value = record.location;
+
+                // Show the form for updating
+                document.getElementById("formContainer").classList.remove("hidden");
+            } else {
+                alert("No data found for the given mobile number.");
+            }
+        }
+
+        function updateData() {
+            if (recordNumber === null) {
+                alert("No record found to update.");
+                return;
+            }
+
+            var token = "90932145|-31949221247820323|90963815";
+            var dbname = "EVENT-DB";
+            var relationName = "REGISTRATION-TABLE";
+            var jsonStr = {
+                mobile: document.getElementById("mobile").value,
+                name: document.getElementById("nameField").value,
+                email: document.getElementById("emailField").value,
+                event: document.getElementById("eventField").value,
+                eventDate: document.getElementById("eventDateField").value,
+                category: document.getElementById("categoryField").value,
+                location: document.getElementById("locationField").value
+            };
+            var reqString = createUPDATERecordRequest(token, JSON.stringify(jsonStr), dbname, relationName, recordNumber);
+
+            jQuery.ajaxSetup({ async: false });
+            var resultObj = executeCommand(reqString, "http://api.login2explore.com:5577", "/api/iml");
+            jQuery.ajaxSetup({ async: true });
+
+            alert(JSON.stringify(resultObj));
+        }
+
+        function resetForm() {
+            document.getElementById("mobile").value = "";
+            document.getElementById("nameField").value = "";
+            document.getElementById("emailField").value = "";
+            document.getElementById("eventField").value = "";
+            document.getElementById("eventDateField").value = "";
+            document.getElementById("categoryField").value = "";
+            document.getElementById("locationField").value = "";
+            document.getElementById("formContainer").classList.add("hidden");
+        }
+    </script>
+</body>
+</html>
