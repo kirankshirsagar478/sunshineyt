@@ -13,12 +13,14 @@
                         Client</button>
                 </div>
                 <div class="social">
-                    <i class="fab fa-facebook"></i>
-                    <i class="fab fa-instagram"></i>
-                    <i class="fab fa-linkedin"></i>
-                    <i class="fab fa-twitter"></i>
-                    <i class="fab fa-pinterest"></i>
+                    <i class="fab fa-instagram" id="instagram"></i>
+                    <i class="fab fa-linkedin" id="linkedin"></i>
+                    <i class="fab fa-linkedin" id="linkedin1"></i>
+                    <i class="fab fa-facebook" id="facebook"></i>
+                    <i class="fab fa-twitter" id="twitter"></i>
+                    <i class="fab fa-pinterest" id="pinterest"></i>
                 </div>
+
             </div>
             <div class="f-container-custom">
                 <h2>Our Location in Pune</h2>
@@ -106,6 +108,32 @@
             $("#contactEmail").val("");
             $("#contactName").focus();
         }
+    </script>
+    <!-- script for socail media icons  -->
+    <script>
+        document.getElementById("facebook").addEventListener("click", function () {
+            window.location.href = "https://facebook.com";
+        });
+
+        document.getElementById("instagram").addEventListener("click", function () {
+            window.location.href = "https://www.instagram.com/sunshine_event_15";
+        });
+
+        document.getElementById("linkedin").addEventListener("click", function () {
+            window.location.href = "https://www.linkedin.com/in/srushti-rindhe-392721276";
+        });
+        document.getElementById("linkedin1").addEventListener("click", function () {
+            window.location.href = "https://www.linkedin.com/in/kirankshirsagar478";
+        });
+
+        document.getElementById("twitter").addEventListener("click", function () {
+            window.location.href = "https://twitter.com";
+        });
+
+        document.getElementById("pinterest").addEventListener("click", function () {
+            window.location.href = "https://pinterest.com";
+        });
+
     </script>
 </body>
 
