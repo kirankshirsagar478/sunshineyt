@@ -1013,7 +1013,7 @@
                         
                         .arrow {
                             position: absolute;
-                            top: 90%;
+                            top: 93%;
                             transform: translateY(-50%);
                             background-color: rgba(0, 0, 0, 0.5);
                             color: white;
@@ -1032,9 +1032,45 @@
                             right: 10px;
                         }
                         
+                        .book-now-btn {
+                            position: absolute;
+                            top: 93%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            background-color: rgba(0, 0, 0, 0.5);
+                            /* Transparent blackish color */
+                            color: white;
+                            border: none;
+                            padding: 10px 20px;
+                            font-size: 18px;
+                            cursor: pointer;
+                            border-radius: 5px;
+                            transition: background-color 0.3s ease;
+                        }
+                        
+                        .book-now-btn:hover {
+                            background-color: rgb(236, 68, 90);
+                            /* Darker on hover */
+                        }
+                        
+                        .rating {
+                            position: absolute;
+                            top: 10px;
+                            right: 10px;
+                            color: yellow;
+                            font-size: 24px;
+                        }
+                        /* Style for stars */
+                        
+                        .rating .star {
+                            color: yellow;
+                        }
+                        
                         .info-container {
+                            position: relative;
+                            padding: 20px;
                             flex: 1;
-                            background-color: rgb(245, 236, 245);
+                            background-color: rgb(245, 225, 245);
                             padding: 20px;
                             border-radius: 8px;
                             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
