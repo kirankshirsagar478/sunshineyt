@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Update Registration Data</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://login2explore.com/jpdb/resources/js/0.0.3/jpdb-commons.js"></script>
+    <!-- header and footer implementation from external html file  -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2kok7Mb0yxpgUVvAk/HJ2jig0SYS2auK4Pfzbm7uH60=" crossorigin="anonymous"> </script>
+    <script>
+        $(function () {
+            $("#header").load("header.html");
+            $("#footer").load("footer.html");
+        });
+    </script>
+</head>
+
+<body>
+    <!-- header section  -->
+    <div id="header"></div>
+    <!-- old code  -->
+    <section class="section-custom">
+        <div class="title text-center">
+            <h1><span>R</span>egistration Details</h1>
+        </div>
+        <div class="container">
+            <div class="form-container">
+                <h2>Update Event Registration</h2>
+                <div class="row justify-content-center">
+                    <form method="post" class="col-md-6">
+                        <div class="form-group">
+                            <label for="mobile">Mobile Number:</label>
+                            <!-- <div style="display: flex;"> -->
+                            <input id="mobile" class="form-control" maxlength="10" placeholder="Enter Mobile Number"
+                                name="mobile" type="number" pattern="[0-9]{10}" /><br>
+                            <input type="button" value="Get Event Details" class="btn btn-primary ml-2"
+                                onclick="fetchData();" />
+                            <!-- </div> -->
+                        </div>
+
+                        <div id="formContainer" class="hidden">
+                            <div class="form-group">
+                                <label for="nameField">Full Name</label>
+                                <input type="text" class="form-control" id="nameField" placeholder="Enter Full Name" required/>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="emailField">Email</label>
+                                <input type="email" class="form-control" id="emailField"
+                                    placeholder="Enter Email Address" required autocapitalize="none" autocorrect="off" style="text-transform: lowercase;" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="eventField">Event</label>
+                                <select class="form-control" id="eventField" name="event" required>
+                                    <option disabled selected>Select Event</option>
+                                    <option value="Wedding">Wedding</option>
+                                    <option value="Birthday">Birthday</option>
+                                    <option value="Corporate Event">Corporate Event</option>
+                                    <option value="Baby Shower">Baby Shower</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="eventDateField">Event Date</label>
+                                <input type="date" class="form-control" id="eventDateField"
+                                    placeholder="Enter Event Date" required/>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="categoryField">Category</label>
+                                <select class="form-control" id="categoryField" name="category" required>
+                                    <option disabled selected>Select Service Category</option>
+                                    <option value="basic">Basic Service</option>
+                                    <option value="moderate">Moderate Service</option>
+                                    <option value="premium">Premium Service</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="locationField">Location</label>
+                                <select class="form-control" id="locationField" name="location" required>
+                                    <option disabled selected>Select Location</option>
+                                    <option value="Pimpri Chinchwad">Pimpri Chinchwad</option>
+                                    <option value="Hinjewadi">Hinjewadi</option>
+                                    <option value="Warje">Warje</option>
+                                    <option value="Nigadi">Nigadi</option>
+                                    <option value="Karvenagar">Karvenagar</option>
+                                    <option value="Katraj">Katraj</option>
+                                </select>
+                            </div>
+                            <!-- Address -->
+                            <div class="form-group">
+                                <label for="addressField">Address:</label>
+                                <textarea class="form-control" id="addressField" placeholder="Enter your address"
+                                    name="address" required></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="button" value="Update Event Details" class="btn btn-success"
+                                    onclick="updateData();" />
+                                <input type="button" value="Cancel" class="btn btn-danger ml-2"
+                                    onclick="resetForm();" />
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- old code ended  -->
+    <!-- Footer and other sections here -->
+    <div id="footer"></div>
+</body>
+<script>
+    var recordNumber = null; // Store record number for updates
+
+    function createGETRequest(connToken, dbName, relName, jsonObjStr) {
+        var getRequest = `{
+                "token" : "${connToken}",
+                "dbName": "${dbName}",
+                "cmd" : "GET_BY_KEY",
+                "rel" : "${relName}",
+                "jsonStr": ${jsonObjStr}
+            }`;
+        return getRequest;
+    }
+
+    function executeCommand(reqString, dbBaseUrl, apiEndPointUrl) {
+        var url = dbBaseUrl + apiEndPointUrl;
+        var jsonObj;
+        $.post(url, reqString, function (result) {
+            jsonObj = JSON.parse(result);
+        }).fail(function (result) {
+            jsonObj = JSON.parse(result.responseText);
+        });
+        return jsonObj;
+    }
+
+    function fetchData() {
+        var token = "90932145|-31949221247820323|90963815";
+        var dbname = "EVENT-DB";
+        var relationName = "REGISTRATION-TABLE";
+        var mobile = document.getElementById("mobile").value;
+        var jsonStr = { mobile: mobile };
+        var reqString = createGETRequest(token, dbname, relationName, JSON.stringify(jsonStr));
+
+        jQuery.ajaxSetup({ async: false });
+        var resultObj = executeCommand(reqString, "http://api.login2explore.com:5577", "/api/irl");
+        jQuery.ajaxSetup({ async: true });
+
+        if (resultObj.status === 200) {
+            var record = JSON.parse(resultObj.data).record;
+            recordNumber = JSON.parse(resultObj.data).rec_no;
+
+            // Populate form fields with data
+            document.getElementById("nameField").value = record.name;
+            document.getElementById("emailField").value = record.email;
+            document.getElementById("eventField").value = record.event;
+            document.getElementById("eventDateField").value = record.eventDate;
+            document.getElementById("categoryField").value = record.category;
+            document.getElementById("locationField").value = record.location;
+            document.getElementById("addressField").value = record.address;
+
+            // Show the form for updating
+            document.getElementById("formContainer").classList.remove("hidden");
+        } else {
+            alert("No data found for the given mobile number.");
+        }
+    }
+
+    function updateData() {
+        if (recordNumber === null) {
+            alert("No record found to update.");
+            return;
+        }
+
+        var token = "90932145|-31949221247820323|90963815";
+        var dbname = "EVENT-DB";
+        var relationName = "REGISTRATION-TABLE";
+        var jsonStr = {
+            mobile: document.getElementById("mobile").value,
+            name: document.getElementById("nameField").value,
+            email: document.getElementById("emailField").value,
+            event: document.getElementById("eventField").value,
+            eventDate: document.getElementById("eventDateField").value,
+            category: document.getElementById("categoryField").value,
+            location: document.getElementById("locationField").value,
+            address: document.getElementById("addressField").value
+        };
+        var reqString = createUPDATERecordRequest(token, JSON.stringify(jsonStr), dbname, relationName, recordNumber);
+
+        jQuery.ajaxSetup({ async: false });
+        var resultObj = executeCommand(reqString, "http://api.login2explore.com:5577", "/api/iml");
+        jQuery.ajaxSetup({ async: true });
+
+        alert(JSON.stringify(resultObj));
+    }
+
+    function resetForm() {
+        document.getElementById("mobile").value = "";
+        document.getElementById("nameField").value = "";
+        document.getElementById("emailField").value = "";
+        document.getElementById("eventField").value = "";
+        document.getElementById("eventDateField").value = "";
+        document.getElementById("categoryField").value = "";
+        document.getElementById("locationField").value = "";
+        document.getElementById("addressField").value = "";
+        document.getElementById("formContainer").classList.add("hidden");
+    }
+</script>
+
+</html>

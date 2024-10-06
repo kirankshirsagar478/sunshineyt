@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Show Event Registration Data</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://login2explore.com/jpdb/resources/js/0.0.3/jpdb-commons.js"></script>
+    <style>
+        table {
+            width: 70%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1>Show Event Registration Data</h1>
+    </center>
+    <center>
+        <input id="mobile" maxlength="10" placeholder="Enter Mobile Number" name="mobile" type="text" /><br><br>
+        <input type="button" value="SHOW DATA" onclick="showData();" />
+    </center>
+    <div id="show"></div>
+
+    <script>
+        function createGETRequest(connToken, dbName, relName, jsonObjStr) {
+            var getRequest = "{\n"
+                + "\"token\" : \"" + connToken + "\","
+                + "\"dbName\": \"" + dbName + "\",\n"
+                + "\"cmd\" : \"GET_BY_KEY\",\n"
+                + "\"rel\" : \"" + relName + "\",\n"
+                + "\"jsonStr\": \n" + jsonObjStr + "\n"
+                + "}";
+            return getRequest;
+        }
+
+        function executeCommand(reqString, dbBaseUrl, apiEndPointUrl) {
+            var url = dbBaseUrl + apiEndPointUrl;
+            var jsonObj;
+            $.post(url, reqString, function (result) {
+                jsonObj = JSON.parse(result);
+            }).fail(function (result) {
+                var dataJsonObj = result.responseText;
+                jsonObj = JSON.parse(dataJsonObj);
+            });
+            return jsonObj;
+        }
+
+        function showData() {
+            var token = "90932145|-31949221247820323|90963815"; // Use your correct token
+            var dbname = "EVENT-DB"; // Update with your DB name
+            var relationName = "REGISTRATION-TABLE"; // Update with your table name
+            var mobile = document.getElementById("mobile").value;
+            var jsonStr = {
+                mobile: mobile
+            };
+            var reqString = createGETRequest(token, dbname, relationName, JSON.stringify(jsonStr));
+            jQuery.ajaxSetup({ async: false });
+            var resultObj = executeCommand(reqString, "http://api.login2explore.com:5577", "/api/irl");
+            jQuery.ajaxSetup({ async: true });
+
+            if (resultObj.status === 200) {
+                try {
+                    // Parse the response data
+                    var record = JSON.parse(resultObj.data).record;
+
+                    // Populate the table with record data
+                    var mainContainer = document.getElementById("show");
+                    mainContainer.innerHTML = `
+                <table>
+                    <tr>
+                        <th>Mobile No</th>
+                        <th>Full Name</th>
+                        <th>Email</th>
+                        <th>Event</th>
+                        <th>Event Date</th>
+                        <th>Category</th>
+                        <th>Location</th>
+                    </tr>
+                    <tr>
+                        <td>${mobile}</td>
+                        <td>${record.name}</td>
+                        <td>${record.email}</td>
+                        <td>${record.event}</td>
+                        <td>${record.eventDate}</td>
+                        <td>${record.category}</td>
+                        <td>${record.location}</td>
+                    </tr>
+                </table>`;
+                } catch (e) {
+                    console.error("Parsing error:", e);
+                    alert("Error parsing data. Please try again.");
+                }
+            } else {
+                alert("No data found for the given mobile number.");
+            }
+        }
+
+    </script>
+</body>
+
+</html>

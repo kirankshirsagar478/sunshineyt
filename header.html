@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>na</title>
+    </head>
+<body>    
+    <header class="head">
+        <a href="./index.html" class="logo">
+            <img src="img/logo.jpg" alt="Logo" class="logo-img">
+        </a>
+        <nav class="navbar-custom">
+            <a href="./index.html" class="active">Home</a>
+            <a href="./index.html#AboutEvents">About Events</a>
+            <a href="./index.html#FeaturedEvents">Featured Events</a>
+            <a href="./index.html#AboutUs">About Us</a>
+            <a href="./index.html#contact">Contact</a>
+        </nav>
+        <button class="btn-custom1" onclick="window.location.href='registration.html'">Register Yourself</button>
+        <div id="menu-bar"><i class="fas fa-bars"></i></div>
+    </header>
+</body>
+<script>
+    // Navbar toggle script
+    document.querySelector('#menu-bar').onclick = function() {
+        let navbar = document.querySelector('.navbar-custom');
+        let menuIcon = document.querySelector('#menu-bar i');
+
+        navbar.classList.toggle('active');
+
+        if (navbar.classList.contains('active')) {
+            menuIcon.classList.remove('fa-bars');
+            menuIcon.classList.add('fa-times');
+        } else {
+            menuIcon.classList.remove('fa-times');
+            menuIcon.classList.add('fa-bars');
+        }
+    };
+</script>
+
+</html>

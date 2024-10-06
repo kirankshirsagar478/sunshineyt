@@ -2,17 +2,35 @@
 <html lang="en">
 
 <head>
+<<<<<<< HEAD
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rituals Decoration</title>
+=======
+    <title>Event-----Planner</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+>>>>>>> 89843b9dd19ba4b5b02884a74d1ee54f85be5271
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
     <link rel="stylesheet" href="style.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://login2explore.com/jpdb/resources/js/0.0.3/jpdb-commons.js"></script>
+    <!-- header and footer implementation from external html file  -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2kok7Mb0yxpgUVvAk/HJ2jig0SYS2auK4Pfzbm7uH60=" crossorigin="anonymous"> </script>
+    <script>
+        $(function () {
+            $("#header").load("header.html");
+            $("#footer").load("footer.html");
+        });
+    </script>
 </head>
 
 <body>
+<<<<<<< HEAD
     <header class="head">
         <a href="#" class="logo">
             <img src="img/logo.jpg" alt="Logo" class="logo-img">
@@ -70,6 +88,14 @@
             <div class="invitation-box ">
                 <img src="img/haldi12.jfif " alt=" " onclick="openModal(this)">
             </div>
+=======
+    <div id="header"></div>
+
+    <!------------------------container code-------------------->
+    <section class="section-custom service" id="service">
+        <div class="title text-center">
+            <h1><span>R</span>egister Yourself</h1>
+>>>>>>> 89843b9dd19ba4b5b02884a74d1ee54f85be5271
         </div>
     </section>
     <div id="imageModal" class="modal" onclick="closeModal()">
@@ -118,6 +144,7 @@
     </div>
 </body>
 
+<<<<<<< HEAD
 <script>
     let menu = document.querySelector('#menu-bar');
     let head = document.querySelector('.head .navbar');
@@ -147,5 +174,9 @@
         modal.style.display = "none"; // Hide the modal
     }
 </script>
+=======
+<!--------------------------------------------footer section--------------------------->
+<div id="footer"></div>
+>>>>>>> 89843b9dd19ba4b5b02884a74d1ee54f85be5271
 
 </html>
