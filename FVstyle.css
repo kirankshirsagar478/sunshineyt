@@ -14,17 +14,22 @@
         margin: 0;
         padding: 0;
     }
+    .slider-container {
+        width: 100%; /* Full width on small screens */
+        height: auto; /* Let the height adjust automatically */
+    }
 
     .slider {
-        height: auto;
-        /* Let the slider height adjust based on content */
+        height: 300px; /* Fixed height for the slider */
+        overflow: hidden; /* Ensures content stays within the fixed height */
     }
 
     .slider img {
         width: 100%;
         /* Images take full width */
-        height: auto;
+        height: 100%;
         /* Let height adjust */
+        object-fit: cover; /* Ensures images keep their aspect ratio and don't distort */
     }
 
     .book-now-btn {
@@ -80,5 +85,13 @@
     footer {
         padding: 1.5rem 2%;
         /* Minimized padding in the footer */
+    }
+    .slider {
+        height: 250px; /* Smaller fixed height for very small screens */
+    }
+
+    .slider img {
+        height: 100%;
+        object-fit: cover; /* Keeps the image proportionate */
     }
 }
