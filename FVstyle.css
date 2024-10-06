@@ -1,0 +1,84 @@
+ /* Responsive container for the slider and info box */
+ @media (max-width: 991px) {
+    .containerS {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .slider-container,
+    .info-container {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .slider {
+        height: auto;
+        /* Let the slider height adjust based on content */
+    }
+
+    .slider img {
+        width: 100%;
+        /* Images take full width */
+        height: auto;
+        /* Let height adjust */
+    }
+
+    .book-now-btn {
+        font-size: 14px;
+        /* Smaller button text */
+        padding: 8px 16px;
+        /* Adjust button size */
+    }
+
+    .arrow {
+        top: 85%;
+        /* Adjust the arrow position */
+    }
+
+    .section-custom {
+        padding: 4rem 2%;
+        /* Decreased padding to reduce space */
+        margin-bottom: 2rem;
+        /* Adjust the bottom margin */
+    }
+
+    footer {
+        padding: 2rem 2%;
+        /* Reduce footer padding */
+    }
+
+}
+
+/* For very small screens */
+@media (max-width: 480px) {
+    .containerS {
+        padding: 10px;
+        /* Less padding */
+    }
+
+    .book-now-btn {
+        font-size: 12px;
+        /* Smaller button text */
+        padding: 6px 12px;
+    }
+
+    .arrow {
+        font-size: 18px;
+    }
+
+    .section-custom {
+        padding: 3rem 2%;
+        /* Further reduce padding on very small screens */
+        margin-bottom: 1rem;
+        /* Reduce margin even more */
+    }
+
+    footer {
+        padding: 1.5rem 2%;
+        /* Minimized padding in the footer */
+    }
+}
