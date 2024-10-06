@@ -11,49 +11,63 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://login2explore.com/jpdb/resources/js/0.0.3/jpdb-commons.js"></script>
+    <!-- header and footer implementation from external html file  -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2kok7Mb0yxpgUVvAk/HJ2jig0SYS2auK4Pfzbm7uH60=" crossorigin="anonymous"> </script>
+    <script>
+        $(function () {
+            $("#header").load("header.html");
+            $("#footer").load("footer.html");
+        });
+    </script>
 </head>
 
 <body>
     <!-- Navbar (from index.html) -->
-    <header class="head">
-        <a href="#" class="logo">
+    <div id="header"></div>
+    <!-- <header class="head">
+        <a href="./index.html" class="logo">
             <img src="img/logo.jpg" alt="Logo" class="logo-img">
         </a>
         <nav class="navbar-custom">
-            <a href="#" class="active">Home</a>
-            <a href="#Aboutevents">About Events</a>
-            <a href="#vendor">Featured Events</a>
-            <a href="#invite">About Us</a>
-            <a href="#contact">Contact</a>
+            <a href="./index.html" class="active">Home</a>
+            <a href="./index.html#Aboutevents">About Events</a>
+            <a href="./index.html#vendor">Featured Events</a>
+            <a href="./index.html#invite">About Us</a>
+            <a href="./index.html#contact">Contact</a>
         </nav>
         <button class="btn-custom1" onclick="window.location.href='registration.html'">Register Yourself</button>
         <div id="menu-bar"><i class="fas fa-bars"></i></div>
-    </header>
+    </header> -->
 
     <section class="section-custom">
         <div class="title text-center">
             <h1><span>R</span>egister Yourself</h1>
         </div>
         <div class="container">
+            <h3>Already Registered? <a href="update.html">Click Here to view or update event details</a></h3>
             <h2>Event Registration Form</h2>
             <div class="row justify-content-center">
                 <form id="regForm" method="post" class="col-md-6">
                     <!-- Name -->
                     <div class="form-group">
                         <label for="name">Full Name:</label>
-                        <input type="text" class="form-control" id="name" placeholder="Enter your name" name="name" required />
+                        <input type="text" class="form-control" id="name" placeholder="Enter your name" name="name"
+                            required />
                     </div>
 
                     <!-- Mobile No -->
                     <div class="form-group">
                         <label for="mobile">Mobile No:</label>
-                        <input type="number" class="form-control" id="mobile" placeholder="Enter your mobile number" name="mobile" required pattern="[0-9]{10}" />
+                        <input type="number" class="form-control" id="mobile" placeholder="Enter your mobile number"
+                            name="mobile" required pattern="[0-9]{10}" />
                     </div>
 
                     <!-- Email ID -->
                     <div class="form-group">
                         <label for="email">Email ID:</label>
-                        <input type="email" class="form-control" id="email" placeholder="Enter your email" name="email" required autocapitalize="none" autocorrect="off" style="text-transform: lowercase;"/>
+                        <input type="email" class="form-control" id="email" placeholder="Enter your email" name="email"
+                            required autocapitalize="none" autocorrect="off" style="text-transform: lowercase;" />
                     </div>
 
                     <!-- Event Date -->
@@ -102,13 +116,15 @@
                     <!-- Address -->
                     <div class="form-group">
                         <label for="address">Address:</label>
-                        <textarea class="form-control" id="address" placeholder="Enter your address" name="address" required></textarea>
+                        <textarea class="form-control" id="address" placeholder="Enter your address" name="address"
+                            required></textarea>
                     </div>
 
                     <!-- Buttons -->
                     <div class="form-group">
                         <input type="button" class="btn btn-success" id="save" value="Register" onclick="saveData();" />
-                        <input type="button" class="btn btn-primary ml-2" id="change" value="Change" onclick="changeData();" />
+                        <input type="button" class="btn btn-primary ml-2" id="change" value="Change"
+                            onclick="changeData();" />
                         <input type="reset" class="btn btn-danger ml-2" id="reset" value="Reset" />
                     </div>
                 </form>
@@ -117,7 +133,8 @@
     </section>
 
     <!-- Footer and other sections here -->
-    <footer id="contact">
+    <div id="footer"> </div>
+    <!-- <footer id="contact">
         <div class="container-custom">
             <div class="f-container-custom">
                 <h2>Sunshine Event - Your Personal Wedding Planner</h2><br>
@@ -158,8 +175,8 @@
     </footer>
     <div class="copyright">
         <p>Copyright ©2024 All Rights Reserved </p>
-    </div>
-    <script>
+    </div> -->
+    <!-- <script>
         // Navbar toggle script
         document.querySelector('#menu-bar').onclick = function() {
             let navbar = document.querySelector('.navbar-custom');
@@ -175,7 +192,7 @@
                 menuIcon.classList.add('fa-bars');
             }
         };
-    </script>
+    </script> -->
 
     <script>
         // Updated form validation and data handling
@@ -244,9 +261,9 @@
             $("#name").focus();
         }
 
-    
+
     </script>
-    <script>
+    <!-- <script>
         // Validate and get data from contact form
         function validateAndGetContactFormData() {
             var contactName = $("#contactName").val();
@@ -305,7 +322,7 @@
             $("#contactEmail").val("");
             $("#contactName").focus();
         }
-    </script>
+    </script> -->
 </body>
 
 </html>

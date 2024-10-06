@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Registration Data</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://login2explore.com/jpdb/resources/js/0.0.3/jpdb-commons.js"></script>
+    <!-- <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 8px 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .buttons-container {
+            text-align: center;
+        }
+
+        input[type="button"] {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btn-get {
+            background-color: #5bc0de;
+        }
+
+        .btn-update {
+            background-color: #5cb85c;
+        }
+
+        .btn-reset {
+            background-color: #d9534f;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style> -->
+</head>
+<body>
+    <header class="head">
+        <a href="#" class="logo">
+            <img src="img/logo.jpg" alt="Logo" class="logo-img">
+        </a>
+        <nav class="navbar-custom">
+            <a href="#" class="active">Home</a>
+            <a href="#Aboutevents">About Events</a>
+            <a href="#vendor">Featured Events</a>
+            <a href="#invite">About Us</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <button class="btn-custom1" onclick="window.location.href='registration.html'">Register Yourself</button>
+        <div id="menu-bar"><i class="fas fa-bars"></i></div>
+    </header>
+    <!-- new code  -->
+    <section class="section-custom">
+        <div class="title text-center">
+            <h1><span>R</span>egister Yourself</h1>
+        </div>
+        <div class="container">
+            <h2>Event Registration Form</h2>
+            <div class="row justify-content-center">
+                <form id="regForm" method="post" class="col-md-6">
+                    <!-- Name -->
+                    <div class="form-group">
+                        <label for="name">Full Name:</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter your name" name="name" required />
+                    </div>
+
+                    <!-- Mobile No -->
+                    <div class="form-group">
+                        <label for="mobile">Mobile No:</label>
+                        <input type="number" class="form-control" id="mobile" placeholder="Enter your mobile number" name="mobile" required pattern="[0-9]{10}" />
+                    </div>
+
+                    <!-- Email ID -->
+                    <div class="form-group">
+                        <label for="email">Email ID:</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter your email" name="email" required autocapitalize="none" autocorrect="off" style="text-transform: lowercase;"/>
+                    </div>
+
+                    <!-- Event Date -->
+                    <div class="form-group">
+                        <label for="eventDate">Event Date:</label>
+                        <input type="date" class="form-control" id="eventDate" name="eventDate" required />
+                    </div>
+
+                    <!-- Select Event -->
+                    <div class="form-group">
+                        <label for="event">Select Event:</label>
+                        <select class="form-control" id="event" name="event" required>
+                            <option disabled selected>Select Event</option>
+                            <option value="Wedding">Wedding</option>
+                            <option value="Birthday">Birthday</option>
+                            <option value="Corporate Event">Corporate Event</option>
+                            <option value="Baby Shower">Baby Shower</option>
+                        </select>
+                    </div>
+
+                    <!-- Event Category -->
+                    <div class="form-group">
+                        <label for="category">Select Event Category:</label>
+                        <select class="form-control" id="category" name="category" required>
+                            <option disabled selected>Select Service Category</option>
+                            <option value="basic">Basic Service</option>
+                            <option value="moderate">Moderate Service</option>
+                            <option value="premium">Premium Service</option>
+                        </select>
+                    </div>
+
+                    <!-- Event Location -->
+                    <div class="form-group">
+                        <label for="location">Event Location:</label>
+                        <select class="form-control" id="location" name="location" required>
+                            <option disabled selected>Select Location</option>
+                            <option value="Pimpri Chinchwad">Pimpri Chinchwad</option>
+                            <option value="Hinjewadi">Hinjewadi</option>
+                            <option value="Warje">Warje</option>
+                            <option value="Nigadi">Nigadi</option>
+                            <option value="Karvenagar">Karvenagar</option>
+                            <option value="Katraj">Katraj</option>
+                        </select>
+                    </div>
+
+                    <!-- Address -->
+                    <div class="form-group">
+                        <label for="address">Address:</label>
+                        <textarea class="form-control" id="address" placeholder="Enter your address" name="address" required></textarea>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="form-group">
+                        <input type="button" class="btn btn-success" id="save" value="Register" onclick="saveData();" />
+                        <input type="button" class="btn btn-primary ml-2" id="change" value="Change" onclick="changeData();" />
+                        <input type="reset" class="btn btn-danger ml-2" id="reset" value="Reset" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- old code  -->
+    <div class="form-container">
+        <h1>Update Event Registration</h1>
+
+        <div class="form-group">
+            <label for="mobile">Mobile Number</label>
+            <div style="display: flex;">
+                <input id="mobile" maxlength="10" placeholder="Enter Mobile Number" name="mobile" type="text" />
+                <input type="button" value="Get Record" class="btn-get" onclick="fetchData();" style="margin-left: 10px;" />
+            </div>
+        </div>
+
+        <div id="formContainer" class="hidden">
+            <div class="form-group">
+                <label for="nameField">Full Name</label>
+                <input type="text" id="nameField" placeholder="Enter Full Name" />
+            </div>
+
+            <div class="form-group">
+                <label for="emailField">Email</label>
+                <input type="text" id="emailField" placeholder="Enter Email Address" />
+            </div>
+
+            <div class="form-group">
+                <label for="eventField">Event</label>
+                <input type="text" id="eventField" placeholder="Enter Event Name" />
+            </div>
+
+            <div class="form-group">
+                <label for="eventDateField">Event Date</label>
+                <input type="date" id="eventDateField" placeholder="Enter Event Date" />
+            </div>
+
+            <div class="form-group">
+                <label for="categoryField">Category</label>
+                <input type="text" id="categoryField" placeholder="Enter Category" />
+            </div>
+
+            <div class="form-group">
+                <label for="locationField">Location</label>
+                <input type="text" id="locationField" placeholder="Enter Location" />
+            </div>
+
+            <div class="buttons-container">
+                <input type="button" value="Update Record" class="btn-update" onclick="updateData();" />
+                <input type="button" value="Reset" class="btn-reset" onclick="resetForm();" />
+            </div>
+        </div>
+    </div>
+    <!-- Footer and other sections here -->
+    <footer id="contact">
+        <div class="container-custom">
+            <div class="f-container-custom">
+                <h2>Sunshine Event - Your Personal Wedding Planner</h2><br>
+                <p>Plan your wedding with Us SunShine is an Indian Wedding Planning Website </p>
+                <div>
+                    <button class="btn-custom " ondblclick="window.location.href='registration.html'">Register as a
+                        Client</button>
+                </div>
+                <div class="social">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-linkedin"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-pinterest"></i>
+                </div>
+            </div>
+            <div class="f-container-custom">
+                <h2>Our Location in Pune</h2>
+                <a href="#"><i class="fas fa-angle-right"></i>Pimpri Chinchwad</a>
+                <a href="#"><i class="fas fa-angle-right"></i>Hinjewadi</a>
+                <a href="#"><i class="fas fa-angle-right"></i>Warje</a>
+                <a href="#"><i class=" fas fa-angle-right"></i>Nigadi</a>
+                <a href="#"><i class=" fas fa-angle-right"></i>Karvenagar</a>
+                <a href="#"><i class=" fas fa-angle-right"></i>Katraj</a>
+            </div>
+
+            <div class="f-container-custom">
+                <h2>Address</h2>
+                <p>Office Address: Sunshine Events Office, Samarth Heights, Lane No 5, Jadhavwadi, Pimpri Chinchwad, Pune-412105
+                </p>
+                <p>Contact Us :</p>
+                <input type="text" id="contactName" placeholder="Enter your Name"><br><br>
+                <input type="text" id="contactReason" placeholder="Enter Contact Reason"><br><br>
+                <input type="email" id="contactEmail" placeholder="Enter Your Email" autocapitalize="none" autocorrect="off" style="text-transform: lowercase;"><br><br>
+                <button class="btn-custom" onclick="submitContactForm()">Enter</button>
+            </div>
+        </div>
+    </footer>
+    <div class="copyright">
+        <p>Copyright ©2024 All Rights Reserved </p>
+    </div>
+</body>
+<script>
+    // Navbar toggle script
+    document.querySelector('#menu-bar').onclick = function() {
+        let navbar = document.querySelector('.navbar-custom');
+        let menuIcon = document.querySelector('#menu-bar i');
+
+        navbar.classList.toggle('active');
+
+        if (navbar.classList.contains('active')) {
+            menuIcon.classList.remove('fa-bars');
+            menuIcon.classList.add('fa-times');
+        } else {
+            menuIcon.classList.remove('fa-times');
+            menuIcon.classList.add('fa-bars');
+        }
+    };
+</script>
+    <script>
+        var recordNumber = null; // Store record number for updates
+
+        function createGETRequest(connToken, dbName, relName, jsonObjStr) {
+            var getRequest = `{
+                "token" : "${connToken}",
+                "dbName": "${dbName}",
+                "cmd" : "GET_BY_KEY",
+                "rel" : "${relName}",
+                "jsonStr": ${jsonObjStr}
+            }`;
+            return getRequest;
+        }
+
+        function executeCommand(reqString, dbBaseUrl, apiEndPointUrl) {
+            var url = dbBaseUrl + apiEndPointUrl;
+            var jsonObj;
+            $.post(url, reqString, function (result) {
+                jsonObj = JSON.parse(result);
+            }).fail(function (result) {
+                jsonObj = JSON.parse(result.responseText);
+            });
+            return jsonObj;
+        }
+
+        function fetchData() {
+            var token = "90932145|-31949221247820323|90963815";
+            var dbname = "EVENT-DB";
+            var relationName = "REGISTRATION-TABLE";
+            var mobile = document.getElementById("mobile").value;
+            var jsonStr = { mobile: mobile };
+            var reqString = createGETRequest(token, dbname, relationName, JSON.stringify(jsonStr));
+            
+            jQuery.ajaxSetup({ async: false });
+            var resultObj = executeCommand(reqString, "http://api.login2explore.com:5577", "/api/irl");
+            jQuery.ajaxSetup({ async: true });
+
+            if (resultObj.status === 200) {
+                var record = JSON.parse(resultObj.data).record;
+                recordNumber = JSON.parse(resultObj.data).rec_no;
+
+                // Populate form fields with data
+                document.getElementById("nameField").value = record.name;
+                document.getElementById("emailField").value = record.email;
+                document.getElementById("eventField").value = record.event;
+                document.getElementById("eventDateField").value = record.eventDate;
+                document.getElementById("categoryField").value = record.category;
+                document.getElementById("locationField").value = record.location;
+
+                // Show the form for updating
+                document.getElementById("formContainer").classList.remove("hidden");
+            } else {
+                alert("No data found for the given mobile number.");
+            }
+        }
+
+        function updateData() {
+            if (recordNumber === null) {
+                alert("No record found to update.");
+                return;
+            }
+
+            var token = "90932145|-31949221247820323|90963815";
+            var dbname = "EVENT-DB";
+            var relationName = "REGISTRATION-TABLE";
+            var jsonStr = {
+                mobile: document.getElementById("mobile").value,
+                name: document.getElementById("nameField").value,
+                email: document.getElementById("emailField").value,
+                event: document.getElementById("eventField").value,
+                eventDate: document.getElementById("eventDateField").value,
+                category: document.getElementById("categoryField").value,
+                location: document.getElementById("locationField").value
+            };
+            var reqString = createUPDATERecordRequest(token, JSON.stringify(jsonStr), dbname, relationName, recordNumber);
+
+            jQuery.ajaxSetup({ async: false });
+            var resultObj = executeCommand(reqString, "http://api.login2explore.com:5577", "/api/iml");
+            jQuery.ajaxSetup({ async: true });
+
+            alert(JSON.stringify(resultObj));
+        }
+
+        function resetForm() {
+            document.getElementById("mobile").value = "";
+            document.getElementById("nameField").value = "";
+            document.getElementById("emailField").value = "";
+            document.getElementById("eventField").value = "";
+            document.getElementById("eventDateField").value = "";
+            document.getElementById("categoryField").value = "";
+            document.getElementById("locationField").value = "";
+            document.getElementById("formContainer").classList.add("hidden");
+        }
+    </script>
+
+</html>
