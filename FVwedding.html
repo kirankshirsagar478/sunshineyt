@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>wedding decoration FV</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://login2explore.com/jpdb/resources/js/0.0.3/jpdb-commons.js"></script>
+    <!-- header and footer implementation from external html file  -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2kok7Mb0yxpgUVvAk/HJ2jig0SYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
+    </script>
+    <script>
+        $(function() {
+            $("#header").load("header.html");
+            $("#footer").load("footer.html");
+        });
+    </script>
+</head>
+
+<body>
+    <div id="header"></div>
+
+    <!------------------------container code-------------------->
+    <section class="section-custom service" id="service">
+        <div class="title text-center">
+            <h1><span>W</span>edding <span>D</span>ecoration</h1>
+        </div>
+
+        <div class="containerS">
+            <div class="slider-container">
+                <div class="slider">
+                    <img src="img/wed6.jpg" alt="Image 1" class="slider-img">
+                    <img src="img/wed3.jpg" alt="Image 2" class="slider-img">
+                    <img src="img/wed2.jpg" alt="Image 3" class="slider-img">
+                </div>
+                <button class="arrow left-arrow">&#9664;</button>
+                <button class="book-now-btn" onclick=" window.location.href='registration.html' ">Book Now</button>
+                <button class="arrow right-arrow">&#9654;</button>
+            </div>
+            <div class="info-container">
+                <div class="rating">
+                    &#9733;&#9733;&#9733;&#9733;&#9733;
+                    <!-- 4 out of 5 stars -->
+                </div>
+                <h2> Wedding Decoration Options </h2>
+                <p id="image-info"></p>
+                As Sunshine Event Planner, we create breathtaking wedding decorations tailored to your vision, transforming your special day into a beautifully crafted celebration filled with elegance, romance, and unforgettable memories. <br> <br>
+                <b>Choose Your Service:</b></br>
+                <b id="text">1. Basic- Simple Elegance (10,000 to 15,000) </b><br>Minimal floral décor <br>Traditional backdrops Affordable <br><br>
+                <b id="text">2. Moderate -Stylish & Sophisticated (15,000 to 25,000)</b><br> Ambient lighting <br>Mid-range<br><br>
+                <b id="text">3. Premium - Lavish & Luxurious (25,000 to 50,000)</b> <br>Designer themes
+                <br> High-end <br><b>Let us bring your vision to life with the perfect package for your budget! </b>
+            </div>
+        </div>
+
+
+        <script>
+            // JavaScript for Image Slider with Arrows
+            const images = document.querySelectorAll('.slider-img');
+            const infoText = document.getElementById('image-info');
+            const leftArrow = document.querySelector('.left-arrow');
+            const rightArrow = document.querySelector('.right-arrow');
+            let currentIndex = 0;
+
+            function showImage(index) {
+                images.forEach((img, i) => {
+                    img.style.display = (i === index) ? 'block' : 'none';
+                });
+                infoText.textContent = imageInfo[index];
+            }
+
+            function nextImage() {
+                currentIndex = (currentIndex + 1) % images.length;
+                showImage(currentIndex);
+            }
+
+            function prevImage() {
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                showImage(currentIndex);
+            }
+
+            rightArrow.addEventListener('click', nextImage);
+            leftArrow.addEventListener('click', prevImage);
+            // Initialize with the first image
+            showImage(currentIndex);
+        </script>
+    </section>
+    <!--------------------------------------------footer section--------------------------->
+    <div id="footer"></div>
+</body>
+
+
+</html>
