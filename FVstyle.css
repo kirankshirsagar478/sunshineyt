@@ -94,4 +94,20 @@
         height: 100%;
         object-fit: cover; /* Keeps the image proportionate */
     }
+    .info-container {
+        position: relative;
+        padding: 10px;
+    }
+
+    .rating {
+        position: static; /* Remove absolute positioning on small screens */
+        margin-bottom: 1rem; /* Add some space between stars and heading */
+        text-align: center; /* Center the stars on small screens */
+    }
+
+    .info-container h2 {
+        margin-top: 1rem;
+        font-size: 2rem; /* Reduce the font size of the heading */
+        text-align: center; /* Center the heading on small screens */
+    }
 }
