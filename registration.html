@@ -25,20 +25,6 @@
 <body>
     <!-- Navbar (from index.html) -->
     <div id="header"></div>
-    <!-- <header class="head">
-        <a href="./index.html" class="logo">
-            <img src="img/logo.jpg" alt="Logo" class="logo-img">
-        </a>
-        <nav class="navbar-custom">
-            <a href="./index.html" class="active">Home</a>
-            <a href="./index.html#Aboutevents">About Events</a>
-            <a href="./index.html#vendor">Featured Events</a>
-            <a href="./index.html#invite">About Us</a>
-            <a href="./index.html#contact">Contact</a>
-        </nav>
-        <button class="btn-custom1" onclick="window.location.href='registration.html'">Register Yourself</button>
-        <div id="menu-bar"><i class="fas fa-bars"></i></div>
-    </header> -->
 
     <section class="section-custom">
         <div class="title text-center">
@@ -134,65 +120,6 @@
 
     <!-- Footer and other sections here -->
     <div id="footer"> </div>
-    <!-- <footer id="contact">
-        <div class="container-custom">
-            <div class="f-container-custom">
-                <h2>Sunshine Event - Your Personal Wedding Planner</h2><br>
-                <p>Plan your wedding with Us SunShine is an Indian Wedding Planning Website </p>
-                <div>
-                    <button class="btn-custom " ondblclick="window.location.href='registration.html'">Register as a
-                        Client</button>
-                </div>
-                <div class="social">
-                    <i class="fab fa-facebook"></i>
-                    <i class="fab fa-instagram"></i>
-                    <i class="fab fa-linkedin"></i>
-                    <i class="fab fa-twitter"></i>
-                    <i class="fab fa-pinterest"></i>
-                </div>
-            </div>
-            <div class="f-container-custom">
-                <h2>Our Location in Pune</h2>
-                <a href="#"><i class="fas fa-angle-right"></i>Pimpri Chinchwad</a>
-                <a href="#"><i class="fas fa-angle-right"></i>Hinjewadi</a>
-                <a href="#"><i class="fas fa-angle-right"></i>Warje</a>
-                <a href="#"><i class=" fas fa-angle-right"></i>Nigadi</a>
-                <a href="#"><i class=" fas fa-angle-right"></i>Karvenagar</a>
-                <a href="#"><i class=" fas fa-angle-right"></i>Katraj</a>
-            </div>
-
-            <div class="f-container-custom">
-                <h2>Address</h2>
-                <p>Office Address: Sunshine Events Office, Samarth Heights, Lane No 5, Jadhavwadi, Pimpri Chinchwad, Pune-412105
-                </p>
-                <p>Contact Us :</p>
-                <input type="text" id="contactName" placeholder="Enter your Name"><br><br>
-                <input type="text" id="contactReason" placeholder="Enter Contact Reason"><br><br>
-                <input type="email" id="contactEmail" placeholder="Enter Your Email" autocapitalize="none" autocorrect="off" style="text-transform: lowercase;"><br><br>
-                <button class="btn-custom" onclick="submitContactForm()">Enter</button>
-            </div>
-        </div>
-    </footer>
-    <div class="copyright">
-        <p>Copyright ©2024 All Rights Reserved </p>
-    </div> -->
-    <!-- <script>
-        // Navbar toggle script
-        document.querySelector('#menu-bar').onclick = function() {
-            let navbar = document.querySelector('.navbar-custom');
-            let menuIcon = document.querySelector('#menu-bar i');
-    
-            navbar.classList.toggle('active');
-    
-            if (navbar.classList.contains('active')) {
-                menuIcon.classList.remove('fa-bars');
-                menuIcon.classList.add('fa-times');
-            } else {
-                menuIcon.classList.remove('fa-times');
-                menuIcon.classList.add('fa-bars');
-            }
-        };
-    </script> -->
 
     <script>
         // Updated form validation and data handling
@@ -263,66 +190,6 @@
 
 
     </script>
-    <!-- <script>
-        // Validate and get data from contact form
-        function validateAndGetContactFormData() {
-            var contactName = $("#contactName").val();
-            var contactReason = $("#contactReason").val();
-            var contactEmail = $("#contactEmail").val();
-    
-            if (contactName === "" || contactReason === "" || contactEmail === "") {
-                alert("Please fill all fields in the contact form.");
-                return "";
-            }
-    
-            // Prepare JSON object for contact form data
-            var contactData = {
-                name: contactName,
-                reason: contactReason,
-                email: contactEmail
-            };
-            return JSON.stringify(contactData);
-        }
-    
-        // Function to submit the contact form data
-        function submitContactForm() {
-            var contactFormData = validateAndGetContactFormData();
-            if (contactFormData === "") {
-                return;  // If form data is invalid, do not proceed
-            }
-    
-            // Create PUT request to store the contact form data in the CONTACT-TABLE
-            var putContactReq = createPUTRequest(
-                "90932145|-31949221247820323|90963815",  // Use your correct token
-                contactFormData,
-                "EVENT-DB",     // Database Name
-                "CONTACT-TABLE" // Relation Name
-            );
-    
-            // Make the AJAX request to store the data
-            jQuery.ajaxSetup({ async: false });
-            var resultObj = executeCommandAtGivenBaseUrl(
-                putContactReq,
-                "http://api.login2explore.com:5577",  // Base URL
-                "/api/iml"
-            );
-            jQuery.ajaxSetup({ async: true });
-    
-            // Show thank you message with the name entered
-            alert("Thank You " + JSON.parse(contactFormData).name + ", We will contact you soon.");
-    
-            // Optionally reset the form fields
-            resetContactForm();
-        }
-    
-        // Function to reset the contact form fields
-        function resetContactForm() {
-            $("#contactName").val("");
-            $("#contactReason").val("");
-            $("#contactEmail").val("");
-            $("#contactName").focus();
-        }
-    </script> -->
 </body>
 
 </html>
