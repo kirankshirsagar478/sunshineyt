@@ -1,232 +1,232 @@
-                        @import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital@0;1&display=swap');
-                         :root {
-                            --clr1: rgb(21, 12, 104);
-                            --clr2: rgb(236, 68, 90);
-                            --clr3: #fff;
-                            --clr4: #000;
-                            --clr5: lightgray;
-                            --clr6: yellow;
-                        }
-                        
-                        * {
-                            margin: 0;
-                            padding: 0;
-                            box-sizing: border-box;
-                            text-decoration: none;
-                            text-transform: capitalize;
-                            font-family: 'PT Sans', sans-serif;
-                            box-sizing: border-box;
-                        }
-                        
-                        html {
-                            font-size: 56%;
-                            overflow-x: hidden;
-                            scroll-behavior: smooth;
-                        }
-                        
-                        html::-webkit-scrollbar {
-                            width: 1rem;
-                        }
-                        
-                        html::-webkit-scrollbar-thumb {
-                            background: var(--clr1);
-                        }
-                        
-                        .section-custom {
-                            padding: 7rem 9%;
-                            margin-top: 7rem;
-                        }
-                        
-                        .section-custom h3 {
-                            font-size: 3rem;
-                            color: var(--clr2);
-                            text-transform: none;
-                            text-align: center;
-                            letter-spacing: .2rem;
-                        }
-                        
-                        .section-custom p {
-                            color: var(--clr3);
-                            font-size: 1.9rem;
-                            text-transform: capitalize;
-                            line-height: 3rem;
-                            justify-content: flex-start;
-                        }
-                        
-                        .section-custom h4 {
-                            margin: 0 0 1rem 30rem;
-                            width: 40%;
-                            font-size: 4rem;
-                            color: var(--clr3);
-                            text-transform: uppercase;
-                            text-align: center;
-                            align-items: center;
-                            letter-spacing: .2rem;
-                            background: var(--clr1);
-                        }
-                        
-                        .btn-custom {
-                            margin-top: 1rem;
-                            padding: 1.9rem 3rem;
-                            font-size: 1.5rem;
-                            text-transform: capitalize;
-                            letter-spacing: .1rem;
-                            font-weight: 900;
-                            color: var(--clr3);
-                            background-color: var(--clr2);
-                            border: none;
-                            border-radius: 5px;
-                            box-shadow: 0rem 2rem 2rem rgba(0, 0, 0, 0.1);
-                            transition: all 0.3s ease 0s;
-                            cursor: pointer;
-                            outline: none;
-                        }
-                        
-                        .btn-customS {
-                            align-items: center;
-                            padding: 1.4rem 3rem;
-                            font-size: 1.5rem;
-                            text-transform: capitalize;
-                            letter-spacing: .1rem;
-                            font-weight: 900;
-                            color: var(--clr3);
-                            background-color: var(--clr2);
-                            border: none;
-                            border-radius: 5px;
-                            /*box-shadow: 0rem 2rem 2rem rgba(0, 0, 0, 0.1);*/
-                            transition: all 0.3s ease 0s;
-                            cursor: pointer;
-                            outline: none;
-                        }
-                        
-                        .btn-custom:hover {
-                            transform: translateY(-1rem);
-                            transition: all .5s ease;
-                        }
-                        
-                        #text {
-                            color: var(--clr2)
-                        }
-                        
-                        .title {
-                            text-align: center;
-                            font-family: sans-serif;
-                            font-size: 2.5rem;
-                            letter-spacing: .2rem;
-                        }
-                        
-                        .title span {
-                            color: var(--clr2);
-                            font-size: 4rem;
-                        }
-                        
-                        .title p {
-                            font-size: 1.8rem;
-                            font-weight: 600;
-                            color: var(--clr4);
-                        }
-                        /*----------------------header .section-custom---------------*/
-                        
-                        .head {
-                            position: fixed;
-                            top: 0;
-                            left: 0;
-                            right: 0;
-                            z-index: 1000;
-                            background: var(--clr1);
-                            /* padding: 2rem 9%; */
-                            display: flex;
-                            align-items: center;
-                            justify-content: space-between;
-                            background-color: var(--clr1);
-                            padding: 15px 20px;
-                        }
-                        
-                        .fa-heart {
-                            color: red;
-                        }
-                        
-                        .head .logo {
-                            font-size: 2.5rem;
-                            color: var(--clr3);
-                            font-weight: 600;
-                            letter-spacing: .8rem;
-                        }
-                        
-                        .span {
-                            color: var(--clr5);
-                            font-size: 2.5rem;
-                        }
-                        /* new code for responsiveness (desktop screens)*/
-                        /* Navbar styling for desktop */
-                        
-                        .head .navbar-custom {
-                            font-size: 1.8rem;
-                            display: flex;
-                            justify-content: flex-end;
-                            align-items: center;
-                        }
-                        
-                        .head .navbar-custom a {
-                            padding: 0 1rem;
-                            color: var(--clr3);
-                            text-decoration: none;
-                        }
-                        
-                        #menu-bar {
-                            display: none;
-                            font-size: 2.5rem;
-                            cursor: pointer;
-                        }
-                        /* new code end (desktop screens) */
-                        /*  ---------Developer 2 code -----------  */
-                        
-                        .head {
-                            display: flex;
-                            justify-content: space-between;
-                            align-items: center;
-                            background-color: var(--clr1);
-                            padding: 15px 20px;
-                        }
-                        
-                        .logo {
-                            display: flex;
-                            align-items: center;
-                            font-size: 1.5em;
-                            color: #fff;
-                            text-decoration: none;
-                        }
-                        
-                        .logo-img {
-                            height: 50px;
-                            width: auto;
-                            margin-right: 10px;
-                        }
-                        
-                        .navbar-custom {
-                            display: flex;
-                            align-items: right;
-                            gap: 20px;
-                            font-size: 1.1em
-                        }
-                        
-                        .navbar-custom a {
-                            text-decoration: none;
-                            color: #fff;
-                            font-weight: bold;
-                            font-size: 1.1em;
-                        }
-                        
-                        .btn-custom1 {
-                            background-color: var(--clr2);
-                            color: #fff;
-                            padding: 10px 20px;
-                            border: none;
-                            border-radius: 5px;
-                            cursor: pointer;
-                            margin-left: 30px;
-                        }
-                        /* @media (max-width: 768px) {
+                            @import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital@0;1&display=swap');
+                             :root {
+                                --clr1: rgb(21, 12, 104);
+                                --clr2: rgb(236, 68, 90);
+                                --clr3: #fff;
+                                --clr4: #000;
+                                --clr5: lightgray;
+                                --clr6: yellow;
+                            }
+                            
+                            * {
+                                margin: 0;
+                                padding: 0;
+                                box-sizing: border-box;
+                                text-decoration: none;
+                                text-transform: capitalize;
+                                font-family: 'PT Sans', sans-serif;
+                                box-sizing: border-box;
+                            }
+                            
+                            html {
+                                font-size: 56%;
+                                overflow-x: hidden;
+                                scroll-behavior: smooth;
+                            }
+                            
+                            html::-webkit-scrollbar {
+                                width: 1rem;
+                            }
+                            
+                            html::-webkit-scrollbar-thumb {
+                                background: var(--clr1);
+                            }
+                            
+                            .section-custom {
+                                padding: 7rem 9%;
+                                margin-top: 7rem;
+                            }
+                            
+                            .section-custom h3 {
+                                font-size: 3rem;
+                                color: var(--clr2);
+                                text-transform: none;
+                                text-align: center;
+                                letter-spacing: .2rem;
+                            }
+                            
+                            .section-custom p {
+                                color: var(--clr3);
+                                font-size: 1.9rem;
+                                text-transform: capitalize;
+                                line-height: 3rem;
+                                justify-content: flex-start;
+                            }
+                            
+                            .section-custom h4 {
+                                margin: 0 0 1rem 30rem;
+                                width: 40%;
+                                font-size: 4rem;
+                                color: var(--clr3);
+                                text-transform: uppercase;
+                                text-align: center;
+                                align-items: center;
+                                letter-spacing: .2rem;
+                                background: var(--clr1);
+                            }
+                            
+                            .btn-custom {
+                                margin-top: 1rem;
+                                padding: 1.9rem 3rem;
+                                font-size: 1.5rem;
+                                text-transform: capitalize;
+                                letter-spacing: .1rem;
+                                font-weight: 900;
+                                color: var(--clr3);
+                                background-color: var(--clr2);
+                                border: none;
+                                border-radius: 5px;
+                                box-shadow: 0rem 2rem 2rem rgba(0, 0, 0, 0.1);
+                                transition: all 0.3s ease 0s;
+                                cursor: pointer;
+                                outline: none;
+                            }
+                            
+                            .btn-customS {
+                                align-items: center;
+                                padding: 1.4rem 3rem;
+                                font-size: 1.5rem;
+                                text-transform: capitalize;
+                                letter-spacing: .1rem;
+                                font-weight: 900;
+                                color: var(--clr3);
+                                background-color: var(--clr2);
+                                border: none;
+                                border-radius: 5px;
+                                /*box-shadow: 0rem 2rem 2rem rgba(0, 0, 0, 0.1);*/
+                                transition: all 0.3s ease 0s;
+                                cursor: pointer;
+                                outline: none;
+                            }
+                            
+                            .btn-custom:hover {
+                                transform: translateY(-1rem);
+                                transition: all .5s ease;
+                            }
+                            
+                            #text {
+                                color: var(--clr2)
+                            }
+                            
+                            .title {
+                                text-align: center;
+                                font-family: sans-serif;
+                                font-size: 2.5rem;
+                                letter-spacing: .2rem;
+                            }
+                            
+                            .title span {
+                                color: var(--clr2);
+                                font-size: 4rem;
+                            }
+                            
+                            .title p {
+                                font-size: 1.8rem;
+                                font-weight: 600;
+                                color: var(--clr4);
+                            }
+                            /*----------------------header .section-custom---------------*/
+                            
+                            .head {
+                                position: fixed;
+                                top: 0;
+                                left: 0;
+                                right: 0;
+                                z-index: 1000;
+                                background: var(--clr1);
+                                /* padding: 2rem 9%; */
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                                background-color: var(--clr1);
+                                padding: 15px 20px;
+                            }
+                            
+                            .fa-heart {
+                                color: red;
+                            }
+                            
+                            .head .logo {
+                                font-size: 2.5rem;
+                                color: var(--clr3);
+                                font-weight: 600;
+                                letter-spacing: .8rem;
+                            }
+                            
+                            .span {
+                                color: var(--clr5);
+                                font-size: 2.5rem;
+                            }
+                            /* new code for responsiveness (desktop screens)*/
+                            /* Navbar styling for desktop */
+                            
+                            .head .navbar-custom {
+                                font-size: 1.8rem;
+                                display: flex;
+                                justify-content: flex-end;
+                                align-items: center;
+                            }
+                            
+                            .head .navbar-custom a {
+                                padding: 0 1rem;
+                                color: var(--clr3);
+                                text-decoration: none;
+                            }
+                            
+                            #menu-bar {
+                                display: none;
+                                font-size: 2.5rem;
+                                cursor: pointer;
+                            }
+                            /* new code end (desktop screens) */
+                            /*  ---------Developer 2 code -----------  */
+                            
+                            .head {
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                background-color: var(--clr1);
+                                padding: 15px 20px;
+                            }
+                            
+                            .logo {
+                                display: flex;
+                                align-items: center;
+                                font-size: 1.5em;
+                                color: #fff;
+                                text-decoration: none;
+                            }
+                            
+                            .logo-img {
+                                height: 50px;
+                                width: auto;
+                                margin-right: 10px;
+                            }
+                            
+                            .navbar-custom {
+                                display: flex;
+                                align-items: right;
+                                gap: 20px;
+                                font-size: 1.1em
+                            }
+                            
+                            .navbar-custom a {
+                                text-decoration: none;
+                                color: #fff;
+                                font-weight: bold;
+                                font-size: 1.1em;
+                            }
+                            
+                            .btn-custom1 {
+                                background-color: var(--clr2);
+                                color: #fff;
+                                padding: 10px 20px;
+                                border: none;
+                                border-radius: 5px;
+                                cursor: pointer;
+                                margin-left: 30px;
+                            }
+                            /* @media (max-width: 768px) {
                 .head {
                     flex-direction: row;
                     justify-content: space-between;
@@ -248,856 +248,945 @@
                     cursor: pointer;
                 }
             } */
-                        /* new media code  */
-                        /* Adjusting the navbar for screens smaller than 991px */
-                        
-                        @media (max-width: 991px) {
-                            .head {
-                                display: flex;
-                                justify-content: space-between;
-                                flex-direction: row;
-                                /* Arrange in a single row */
-                                align-items: center;
-                                padding: 10px 20px;
-                                /* Adjust padding */
+                            /* new media code  */
+                            /* Adjusting the navbar for screens smaller than 991px */
+                            
+                            @media (max-width: 991px) {
+                                .head {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    flex-direction: row;
+                                    /* Arrange in a single row */
+                                    align-items: center;
+                                    padding: 10px 20px;
+                                    /* Adjust padding */
+                                }
+                                /* Logo Styling align to left */
+                                /* Align logo to the left */
+                                .logo {
+                                    flex: 1;
+                                    display: flex;
+                                    justify-content: flex-start;
+                                }
+                                /* Adjust Button (Register Yourself) for Mobile */
+                                .btn-custom1 {
+                                    position: absolute;
+                                    left: 50%;
+                                    transform: translateX(-50%);
+                                    font-size: 1.4rem;
+                                    padding: 10px 20px;
+                                    text-align: center;
+                                    z-index: 1000;
+                                    /* Make sure it stays visible */
+                                }
+                                .head .navbar-custom {
+                                    position: absolute;
+                                    top: 100%;
+                                    left: 0;
+                                    right: 0;
+                                    background-color: var(--clr2);
+                                    flex-direction: column;
+                                    align-items: flex-start;
+                                    display: none;
+                                }
+                                /* Adjust Navbar for Mobile (already done) */
+                                .navbar-custom {
+                                    margin-top: 0.1rem;
+                                    width: 100%;
+                                    display: none;
+                                    /* new */
+                                    position: absolute;
+                                    top: 100%;
+                                    left: 0;
+                                    right: 0;
+                                    background-color: var(--clr1);
+                                    flex-direction: column;
+                                    display: none;
+                                    align-items: flex-start;
+                                }
+                                .head .navbar-custom.active {
+                                    display: block;
+                                }
+                                /* Align hamburger menu to the right */
+                                #menu-bar {
+                                    display: block;
+                                    position: absolute;
+                                    right: 20px;
+                                    /* Align to the right */
+                                    top: 50%;
+                                    transform: translateY(-50%);
+                                    font-size: 2.5rem;
+                                    cursor: pointer;
+                                    color: var(--clr3);
+                                }
+                                .head .navbar-custom a {
+                                    padding: 1rem 2rem;
+                                    width: 100%;
+                                }
+                                /* Additional styling for cross icon */
+                                #menu-bar.active .fa-bars {
+                                    display: none;
+                                    /* Hide the bars when the menu is active */
+                                }
+                                #menu-bar.active .fa-times {
+                                    display: block;
+                                    /* Show the cross icon */
+                                }
+                                .fa-times {
+                                    display: none;
+                                    /* Initially hidden */
+                                }
+                                .navbar-custom.active {
+                                    display: block;
+                                }
                             }
-                            /* Logo Styling align to left */
-                            /* Align logo to the left */
-                            .logo {
-                                flex: 1;
-                                display: flex;
-                                justify-content: flex-start;
+                            /* Adjust further for mobile screens (450px or smaller) */
+                            
+                            @media (max-width: 450px) {
+                                .head {
+                                    padding: 10px;
+                                }
+                                /* Button styling for mobile */
+                                .btn-custom1 {
+                                    font-size: 1.2rem;
+                                    padding: 0.8rem;
+                                }
+                                /* Logo Styling */
+                                .logo-img {
+                                    max-width: 80px;
+                                    /* Resize logo for smaller screens */
+                                }
+                                .navbar-custom a {
+                                    padding: 1rem 1.5rem;
+                                }
+                                .btn-custom1 {
+                                    font-size: 1.2rem;
+                                    padding: 0.8rem;
+                                }
+                                #menu-bar {
+                                    font-size: 2rem;
+                                }
                             }
-                            /* Adjust Button (Register Yourself) for Mobile */
-                            .btn-custom1 {
-                                position: absolute;
-                                left: 50%;
-                                transform: translateX(-50%);
-                                font-size: 1.4rem;
-                                padding: 10px 20px;
-                                text-align: center;
-                                z-index: 1000;
-                                /* Make sure it stays visible */
-                            }
-                            .head .navbar-custom {
-                                position: absolute;
-                                top: 100%;
-                                left: 0;
-                                right: 0;
-                                background-color: var(--clr2);
-                                flex-direction: column;
-                                align-items: flex-start;
-                                display: none;
-                            }
-                            /* Adjust Navbar for Mobile (already done) */
-                            .navbar-custom {
-                                margin-top: 0.1rem;
-                                width: 100%;
-                                display: none;
-                                /* new */
-                                position: absolute;
-                                top: 100%;
-                                left: 0;
-                                right: 0;
-                                background-color: var(--clr1);
-                                flex-direction: column;
-                                display: none;
-                                align-items: flex-start;
-                            }
-                            .head .navbar-custom.active {
-                                display: block;
-                            }
-                            /* Align hamburger menu to the right */
-                            #menu-bar {
-                                display: block;
-                                position: absolute;
-                                right: 20px;
-                                /* Align to the right */
-                                top: 50%;
-                                transform: translateY(-50%);
-                                font-size: 2.5rem;
-                                cursor: pointer;
-                                color: var(--clr3);
-                            }
-                            .head .navbar-custom a {
-                                padding: 1rem 2rem;
-                                width: 100%;
-                            }
-                            /* Additional styling for cross icon */
-                            #menu-bar.active .fa-bars {
-                                display: none;
-                                /* Hide the bars when the menu is active */
-                            }
-                            #menu-bar.active .fa-times {
-                                display: block;
-                                /* Show the cross icon */
-                            }
-                            .fa-times {
-                                display: none;
-                                /* Initially hidden */
-                            }
+                            /* new media code ended */
+                            
                             .navbar-custom.active {
-                                display: block;
+                                display: flex;
                             }
-                        }
-                        /* Adjust further for mobile screens (450px or smaller) */
-                        
-                        @media (max-width: 450px) {
-                            .head {
-                                padding: 10px;
+                            /*----------------------Home-------------*/
+                            
+                            .home {
+                                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)), url("img/background.jpg");
+                                background-position: center;
+                                background-repeat: no-repeat;
+                                background-size: cover;
+                                justify-content: center;
+                                align-items: center;
+                                height: 90vh;
                             }
-                            /* Button styling for mobile */
-                            .btn-custom1 {
-                                font-size: 1.2rem;
-                                padding: 0.8rem;
+                            
+                            .search-box {
+                                margin: 20rem 0 0 0;
+                                color: var(--clr3);
+                                text-align: center;
                             }
-                            /* Logo Styling */
-                            .logo-img {
-                                max-width: 80px;
-                                /* Resize logo for smaller screens */
-                            }
-                            .navbar-custom a {
-                                padding: 1rem 1.5rem;
-                            }
-                            .btn-custom1 {
-                                font-size: 1.2rem;
-                                padding: 0.8rem;
-                            }
-                            #menu-bar {
-                                font-size: 2rem;
-                            }
-                        }
-                        /* new media code ended */
-                        
-                        .navbar-custom.active {
-                            display: flex;
-                        }
-                        /*----------------------Home-------------*/
-                        
-                        .home {
-                            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)), url("img/background.jpg");
-                            background-position: center;
-                            background-repeat: no-repeat;
-                            background-size: cover;
-                            justify-content: center;
-                            align-items: center;
-                            height: 90vh;
-                        }
-                        
-                        .search-box {
-                            margin: 20rem 0 0 0;
-                            color: var(--clr3);
-                            text-align: center;
-                        }
-                        
-                        .search-box h1 {
-                            font-size: 5.5rem;
-                            text-transform: capitalize;
-                            font-weight: 600;
-                            letter-spacing: .2rem;
-                        }
-                        
-                        .search-box p {
-                            font-size: 1.8rem;
-                            margin: .5rem 0;
-                        }
-                        
-                        .search-field {
-                            width: 25rem;
-                            height: 4.5rem;
-                            font-size: 1.5rem;
-                            font-weight: 600;
-                            color: var(--clr2);
-                        }
-                        
-                        @media(max-width:767px) {
+                            
                             .search-box h1 {
-                                font-size: 4rem;
+                                font-size: 5.5rem;
+                                text-transform: capitalize;
+                                font-weight: 600;
+                                letter-spacing: .2rem;
                             }
+                            
+                            .search-box p {
+                                font-size: 1.8rem;
+                                margin: .5rem 0;
+                            }
+                            
                             .search-field {
-                                width: 15rem;
+                                width: 25rem;
+                                height: 4.5rem;
+                                font-size: 1.5rem;
+                                font-weight: 600;
+                                color: var(--clr2);
                             }
-                        }
-                        /*-------------------About_Us Developer 2--------------*/
-                        
-                        .vendor-list {
-                            align-items: center;
-                            justify-content: center;
-                            display: flex;
-                            flex-wrap: wrap;
-                        }
-                        
-                        .about {
-                            max-width: 1300px;
-                            background: rgb(245, 236, 245);
-                            font-weight: 100;
-                            flex: 1 1 30rem;
-                            padding: 1.2rem;
-                            margin: 1.5rem;
-                            border-radius: 1rem;
-                            box-shadow: 0 .2rem .5rem rgb(236, 68, 90);
-                        }
-                        
-                        .vendor .vendor-row {
-                            max-width: 1300px;
-                            background: rgb(245, 236, 245);
-                            height: 35rem;
-                            flex: 1 1 30rem;
-                            padding: 1.2rem;
-                            margin: 1.5rem;
-                            border-radius: 1rem;
-                            box-shadow: 0 .2rem .5rem rgb(236, 68, 90);
-                        }
-                        
-                        .vendor .vendor-roww {
-                            max-width: 1300px;
-                            background: rgb(245, 236, 245);
-                            height: 35rem;
-                            flex: 1 1 30rem;
-                            padding: 1.2rem;
-                            margin: 1.5rem;
-                            border-radius: 1rem;
-                            box-shadow: 0 .2rem .5rem rgb(236, 68, 90);
-                        }
-                        
-                        .vendor-roww h2 {
-                            color: var(--clr1);
-                        }
-                        
-                        .vendor-roww i {
-                            color: var(--clr2);
-                        }
-                        
-                        .vendor-row:hover {
-                            transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-                            transform: rotate(5deg);
-                        }
-                        
-                        .vendor .vendor-row img {
-                            height: 20rem;
-                            width: 100%;
-                            object-fit: cover;
-                        }
-                        
-                        .vendor-row h2 {
-                            font-size: 2rem;
-                            align-items: center;
-                        }
-                        
-                        .vendor-row p {
-                            font-size: 1.2rem;
-                            font-weight: 500;
-                            color: var(--clr1);
-                        }
-                        
-                        .vendor h3 {
-                            font-size: 2rem;
-                            color: var(clr2);
-                            background: var(--clr5);
-                        }
-                        /*-------------------services--------------*/
-                        
-                        .services-row {
-                            display: flex;
-                            justify-content: center;
-                            flex-wrap: wrap;
-                            align-items: center;
-                        }
-                        
-                        .services-col {
-                            height: 22rem;
-                            color: rgb(236, 68, 90);
-                            background: url("img/back-2.png");
-                            background-color: lightgray;
-                            background-position: center;
-                            background-size: cover;
-                            border-radius: 15px;
-                            flex: 1 1 25rem;
-                            padding: 1.2rem;
-                            margin: 1.5rem;
-                        }
-                        
-                        .services-col i {
-                            padding: 2.2rem;
-                            border: none;
-                            background: aliceblue;
-                            border-radius: 5rem;
-                            font-size: 2.8rem;
-                        }
-                        
-                        .services-col h2 {
-                            padding: 1rem 0;
-                            font-size: 2rem;
-                            color: #000;
-                        }
-                        
-                        .services-col p {
-                            font-size: 1.2rem;
-                            color: #000;
-                        }
-                        
-                        @media (max-width:767px) {
-                            .service {
-                                margin-bottom: 30rem;
+                            
+                            @media(max-width:767px) {
+                                .search-box h1 {
+                                    font-size: 4rem;
+                                }
+                                .search-field {
+                                    width: 15rem;
+                                }
                             }
-                        }
-                        /*----------------------vendor .section-custom------------*/
-                        
-                        .vendor-list {
-                            align-items: center;
-                            justify-content: center;
-                            display: flex;
-                            flex-wrap: wrap;
-                        }
-                        
-                        .vendor .vendor-row {
-                            max-width: 1300px;
-                            background: rgb(245, 236, 245);
-                            height: 40rem;
-                            flex: 1 1 30rem;
-                            padding: 1.2rem;
-                            margin: 1.5rem;
-                            border-radius: 1rem;
-                            box-shadow: 0 .2rem .5rem rgb(236, 68, 90);
-                        }
-                        
-                        .vendor-row:hover {
-                            transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-                            transform: rotate(5deg);
-                        }
-                        
-                        .vendor-row .rate {
-                            width: 6rem;
-                            padding: .5rem .1rem;
-                            color: #000;
-                            border: none;
-                            background: var(--clr6);
-                            font-size: 1.6rem;
-                            font-weight: 400;
-                        }
-                        
-                        .vendor .vendor-row img {
-                            height: 20rem;
-                            width: 100%;
-                            object-fit: cover;
-                        }
-                        
-                        .vendor-row h2 {
-                            font-size: 2rem;
-                            font-weight: 600;
-                        }
-                        
-                        .vendor-row p {
-                            font-size: 1.2rem;
-                            font-weight: 500;
-                            color: var(--clr4);
-                        }
-                        
-                        .vendor h3 {
-                            font-size: 2rem;
-                            color: var(clr2);
-                            background: var(--clr4);
-                        }
-                        /*----------------------------venue .section-custom-----------------*/
-                        
-                        .venue .venue-list {
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            flex-wrap: wrap;
-                        }
-                        
-                        .venue .venue-list .venue-box {
-                            flex: 1 1 30rem;
-                            margin: 1rem;
-                            position: relative;
-                            border-radius: .6rem;
-                            overflow: hidden;
-                            height: 20rem;
-                        }
-                        
-                        .venue .venue-list .venue-box img {
-                            height: 22rem;
-                            width: 100%;
-                            object-fit: cover;
-                        }
-                        
-                        .venue .venue-list .venue-box .venue-info {
-                            display: flex;
-                            flex-flow: column;
-                            align-items: center;
-                            justify-content: center;
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            height: 100%;
-                            width: 100%;
-                            color: #fff;
-                            background: rgba(46, 39, 40, 0.5);
-                            transform: scale(1.3);
-                            opacity: 0;
-                            transition: 1s ease;
-                        }
-                        
-                        .venue .venue-list .venue-box:hover .venue-info {
-                            transform: scale(1);
-                            opacity: 1;
-                        }
-                        
-                        .venue .venue-list .venue-box .venue-info h2 {
-                            letter-spacing: .1rem;
-                            font-size: 3rem;
-                        }
-                        
-                        .venue .venue-list .venue-box .venue-info p {
-                            letter-spacing: .1rem;
-                            font-size: 2rem;
-                        }
-                        
-                        .venue .venue-list .venue-box .venue-info .btn-custom {
-                            width: 12rem;
-                            height: 4rem;
-                            margin: 1rem;
-                            padding: .6rem;
-                            letter-spacing: .1rem;
-                            font-size: 1.6rem;
-                            font-weight: 700;
-                            color: #fff;
-                            background: rgb(236, 68, 90);
-                            border: none;
-                            border-radius: .5rem;
-                        }
-                        /*--------------------------e-invitation .section-custom-----------*/
-                        
-                        .invite .invitation-row {
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            flex-wrap: wrap;
-                        }
-                        
-                        .invite .invitation-row .invitation-box {
-                            flex: 1 1 25rem;
-                            margin: 1rem;
-                            position: relative;
-                            border: .2rem dotted var(--clr2);
-                            padding: 2rem;
-                            border-radius: .6rem;
-                            overflow: hidden;
-                            height: 30rem;
-                        }
-                        
-                        .invite .invitation-row .invitation-box:hover {
-                            transition: .5s ease;
-                            transform: translateY(-2rem);
-                        }
-                        
-                        .invite .invitation-row .invitation-box img {
-                            height: 100%;
-                            width: 100%;
-                            object-fit: cover;
-                            /* Ensures the image fits inside the card */
-                            cursor: pointer;
-                            /* Makes the image clickable */
-                        }
-                        
-                        .invite .invitation-row .invitation-box p {
-                            height: 100%;
-                            width: 100%;
-                            /*object-fit: cover;*/
-                        }
-                        
-                        .modal {
-                            display: none;
-                            /* Hidden by default */
-                            position: fixed;
-                            /* Stay in place */
-                            z-index: 1000;
-                            /* Sit on top */
-                            left: 0;
-                            top: 0;
-                            width: 100%;
-                            /* Full width */
-                            height: 100%;
-                            /* Full height */
-                            overflow: auto;
-                            /* Enable scroll if needed */
-                            background-color: rgba(0, 0, 0, 0.8);
-                            /* Black background with opacity */
-                        }
-                        
-                        .modal-content {
-                            margin: auto;
-                            display: block;
-                            width: 80%;
-                            max-width: 700px;
-                        }
-                        
-                        .modal-content img {
-                            width: 100%;
-                        }
-                        
-                        .close {
-                            position: absolute;
-                            top: 15px;
-                            right: 35px;
-                            color: white;
-                            font-size: 40px;
-                            font-weight: bold;
-                            transition: 0.3s;
-                        }
-                        
-                        .close:hover,
-                        .close:focus {
-                            color: #bbb;
-                            text-decoration: none;
-                            cursor: pointer;
-                        }
-                        /* ----------- Media Query for Mobile Devices ----------- */
-                        
-                        @media (max-width: 768px) {
-                            /* For tablet and mobile devices, reduce card size and make it 100% width */
-                            .invite .invitation-row .invitation-box {
-                                flex: 1 1 100%;
-                                /* Full-width cards */
-                                height: auto;
-                                /* Adjust height based on image and content */
-                                margin: 0.5rem;
-                                /* Reduce margin for mobile */
-                                padding: 1rem;
-                                /* Reduce padding for mobile */
+                            /*-------------------About_Us Developer 2--------------*/
+                            
+                            .vendor-list {
+                                align-items: center;
+                                justify-content: center;
+                                display: flex;
+                                flex-wrap: wrap;
                             }
-                            /* Ensure images still fill the cards while maintaining aspect ratio */
-                            .invite .invitation-row .invitation-box img {
+                            
+                            .about {
+                                max-width: 1300px;
+                                background: rgb(245, 236, 245);
+                                font-weight: 100;
+                                flex: 1 1 30rem;
+                                padding: 1.2rem;
+                                margin: 1.5rem;
+                                border-radius: 1rem;
+                                box-shadow: 0 .2rem .5rem rgb(236, 68, 90);
+                            }
+                            
+                            .vendor .vendor-row {
+                                max-width: 1300px;
+                                background: rgb(245, 236, 245);
+                                height: 35rem;
+                                flex: 1 1 30rem;
+                                padding: 1.2rem;
+                                margin: 1.5rem;
+                                border-radius: 1rem;
+                                box-shadow: 0 .2rem .5rem rgb(236, 68, 90);
+                            }
+                            
+                            .vendor .vendor-roww {
+                                max-width: 1300px;
+                                background: rgb(245, 236, 245);
+                                height: 35rem;
+                                flex: 1 1 30rem;
+                                padding: 1.2rem;
+                                margin: 1.5rem;
+                                border-radius: 1rem;
+                                box-shadow: 0 .2rem .5rem rgb(236, 68, 90);
+                            }
+                            
+                            .vendor-roww h2 {
+                                color: var(--clr1);
+                            }
+                            
+                            .vendor-roww i {
+                                color: var(--clr2);
+                            }
+                            
+                            .vendor-row:hover {
+                                transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+                                transform: rotate(5deg);
+                            }
+                            
+                            .vendor .vendor-row img {
+                                height: 20rem;
                                 width: 100%;
-                                height: auto;
-                                /* Allow images to resize naturally */
                                 object-fit: cover;
                             }
-                            /* Reduce the width of the modal content for smaller screens */
-                            .modal-content {
-                                width: 90%;
-                                /* Make the modal image more mobile-friendly */
-                            }
-                            /* Make close button smaller */
-                            .close {
-                                font-size: 30px;
-                            }
-                        }
-                        /* Further media queries for very small devices (e.g., small phones) */
-                        
-                        @media (max-width: 480px) {
-                            .invite .invitation-row .invitation-box {
-                                padding: 0.5rem;
-                            }
-                            .modal-content {
-                                width: 95%;
-                                /* Maximize modal image size for small screens */
-                            }
-                        }
-                        /*---------------------------footer .section-custom-------------*/
-                        
-                        footer {
-                            padding: 5rem 5%;
-                        }
-                        
-                        #contact {
-                            background-color: var(--clr2);
-                        }
-                        
-                        .container-custom {
-                            padding: 3rem;
-                            display: grid;
-                            grid-template-columns: 1fr 1fr 1fr;
-                            grid-gap: 2rem;
-                        }
-                        
-                        .f-container-custom h2 {
-                            font-size: 2.5rem;
-                            color: var(--clr3);
-                            padding: 1rem 0;
-                        }
-                        
-                        .f-container-custom a {
-                            font-size: 1.4rem;
-                            text-decoration: none;
-                            color: var(--clr3);
-                            padding: 1rem 0;
-                            display: block;
-                        }
-                        
-                        .f-container-custom a:hover {
-                            transform: translateX(.5rem);
-                            transition: .5s ease;
-                        }
-                        
-                        .f-container-custom i {
-                            padding-right: .5rem;
-                            color: var(--clr1);
-                        }
-                        
-                        .f-container-custom p {
-                            padding-bottom: 1rem;
-                            font-size: 1.5rem;
-                            color: var(--clr1);
-                        }
-                        
-                        .f-container-custom input {
-                            width: 90%;
-                            padding: 1rem;
-                            background: #eee;
-                            border: .2rem solid var(--clr1);
-                        }
-                        
-                        .f-container-custom .btn-custom {
-                            background: var(--clr1);
-                            color: #fff;
-                            cursor: pointer;
-                            margin-top: 2rem;
-                            border-radius: .2rem;
-                        }
-                        
-                        .f-container-custom .social i {
-                            margin-top: 1rem;
-                            font-size: 2rem;
-                            background: var(--clr3);
-                            border-radius: 1rem;
-                            padding: 1rem;
-                        }
-                        
-                        .f-container-custom .social i:hover {
-                            transform: rotate(360deg);
-                            transition: 1s ease;
-                        }
-                        
-                        .footer-content {
-                            padding: 2rem 0;
-                            text-align: center;
-                        }
-                        
-                        .footer-content h1 {
-                            font-size: 3rem;
-                            color: #aaa;
-                        }
-                        
-                        .copyright {
-                            padding: 2rem 0;
-                            text-align: center;
-                            background: var(--clr1);
-                            color: #fff;
-                            font-size: 1.5rem;
-                        }
-                        
-                        .copyright p {
-                            font-size: 1.2rem;
-                            color: #aaa;
-                        }
-                        /*----------------------media Query-------------------*/
-                        
-                        @media(max-width:1200px) {
-                            html {
-                                font-size: 55%;
-                            }
-                            .head {
-                                padding: 3rem;
-                            }
-                            .section-custom {
-                                padding: 3rem 2rem;
-                            }
-                        }
-                        
-                        @media(max-width:991px) {
-                            html {
-                                font-size: 55%;
-                            }
-                            .head {
-                                padding: 3rem;
-                            }
-                            #menu-bar {
-                                display: inline-block;
+                            
+                            .vendor-row h2 {
                                 font-size: 2rem;
-                            }
-                            .navbar-custom {
-                                position: absolute;
-                                top: 99%;
-                                left: 0;
-                                right: 0;
-                                background: var(--clr2);
-                                clip-path: polygon(0 0, 100% 0%, 100% 0, 0 0);
-                            }
-                            .head .navbar-custom.active {
-                                clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
-                            }
-                            .navbar-custom a {
-                                display: block;
-                                margin: 2rem;
-                            }
-                            .inner-content {
-                                margin-top: 2rem;
-                            }
-                            .service,
-                            .vendor-list,
-                            .venue-list,
-                            .invitation-row,
-                            .container-custom {
-                                display: inline-block;
-                            }
-                            .in-box {
-                                margin-bottom: 2rem;
-                            }
-                            .blog-content {
-                                padding: 1rem;
-                            }
-                            .section-custom h4 {
-                                font-size: 3rem;
-                                margin-left: 10rem;
-                                text-align: center;
-                            }
-                        }
-                        
-                        @media(max-width:768px) {
-                            .home-content {
-                                display: inline-block;
-                            }
-                            .home .inner-content {
-                                text-align: center;
-                            }
-                            .home .inner-content-img img {
-                                width: 35rem;
                                 align-items: center;
                             }
-                        }
-                        
-                        @media(max-width:450px) {
-                            html {
-                                font-size: 50%;
+                            
+                            .vendor-row p {
+                                font-size: 1.2rem;
+                                font-weight: 500;
+                                color: var(--clr1);
                             }
-                            .head {
+                            
+                            .vendor h3 {
+                                font-size: 2rem;
+                                color: var(clr2);
+                                background: var(--clr5);
+                            }
+                            /*-------------------services--------------*/
+                            
+                            .services-row {
+                                display: flex;
+                                justify-content: center;
+                                flex-wrap: wrap;
+                                align-items: center;
+                            }
+                            
+                            .services-col {
+                                height: 22rem;
+                                color: rgb(236, 68, 90);
+                                background: url("img/back-2.png");
+                                background-color: lightgray;
+                                background-position: center;
+                                background-size: cover;
+                                border-radius: 15px;
+                                flex: 1 1 25rem;
+                                padding: 1.2rem;
+                                margin: 1.5rem;
+                            }
+                            
+                            .services-col i {
+                                padding: 2.2rem;
+                                border: none;
+                                background: aliceblue;
+                                border-radius: 5rem;
+                                font-size: 2.8rem;
+                            }
+                            
+                            .services-col h2 {
+                                padding: 1rem 0;
+                                font-size: 2rem;
+                                color: #000;
+                            }
+                            
+                            .services-col p {
+                                font-size: 1.2rem;
+                                color: #000;
+                            }
+                            
+                            @media (max-width:767px) {
+                                .service {
+                                    margin-bottom: 30rem;
+                                }
+                            }
+                            /*----------------------vendor .section-custom------------*/
+                            
+                            .vendor-list {
+                                align-items: center;
+                                justify-content: center;
+                                display: flex;
+                                flex-wrap: wrap;
+                            }
+                            
+                            .vendor .vendor-row {
+                                max-width: 1300px;
+                                background: rgb(245, 236, 245);
+                                height: 40rem;
+                                flex: 1 1 30rem;
+                                padding: 1.2rem;
+                                margin: 1.5rem;
+                                border-radius: 1rem;
+                                box-shadow: 0 .2rem .5rem rgb(236, 68, 90);
+                            }
+                            
+                            .vendor-row:hover {
+                                transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+                                transform: rotate(5deg);
+                            }
+                            
+                            .vendor-row .rate {
+                                width: 6rem;
+                                padding: .5rem .1rem;
+                                color: #000;
+                                border: none;
+                                background: var(--clr6);
+                                font-size: 1.6rem;
+                                font-weight: 400;
+                            }
+                            
+                            .vendor .vendor-row img {
+                                height: 20rem;
+                                width: 100%;
+                                object-fit: cover;
+                            }
+                            
+                            .vendor-row h2 {
+                                font-size: 2rem;
+                                font-weight: 600;
+                            }
+                            
+                            .vendor-row p {
+                                font-size: 1.2rem;
+                                font-weight: 500;
+                                color: var(--clr4);
+                            }
+                            
+                            .vendor h3 {
+                                font-size: 2rem;
+                                color: var(clr2);
+                                background: var(--clr4);
+                            }
+                            /*----------------------------venue .section-custom-----------------*/
+                            
+                            .venue .venue-list {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                flex-wrap: wrap;
+                            }
+                            
+                            .venue .venue-list .venue-box {
+                                flex: 1 1 30rem;
+                                margin: 1rem;
+                                position: relative;
+                                border-radius: .6rem;
+                                overflow: hidden;
+                                height: 20rem;
+                            }
+                            
+                            .venue .venue-list .venue-box img {
+                                height: 22rem;
+                                width: 100%;
+                                object-fit: cover;
+                            }
+                            
+                            .venue .venue-list .venue-box .venue-info {
+                                display: flex;
+                                flex-flow: column;
+                                align-items: center;
+                                justify-content: center;
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                height: 100%;
+                                width: 100%;
+                                color: #fff;
+                                background: rgba(46, 39, 40, 0.5);
+                                transform: scale(1.3);
+                                opacity: 0;
+                                transition: 1s ease;
+                            }
+                            
+                            .venue .venue-list .venue-box:hover .venue-info {
+                                transform: scale(1);
+                                opacity: 1;
+                            }
+                            
+                            .venue .venue-list .venue-box .venue-info h2 {
+                                letter-spacing: .1rem;
+                                font-size: 3rem;
+                            }
+                            
+                            .venue .venue-list .venue-box .venue-info p {
+                                letter-spacing: .1rem;
+                                font-size: 2rem;
+                            }
+                            
+                            .venue .venue-list .venue-box .venue-info .btn-custom {
+                                width: 12rem;
+                                height: 4rem;
+                                margin: 1rem;
+                                padding: .6rem;
+                                letter-spacing: .1rem;
+                                font-size: 1.6rem;
+                                font-weight: 700;
+                                color: #fff;
+                                background: rgb(236, 68, 90);
+                                border: none;
+                                border-radius: .5rem;
+                            }
+                            /*--------------------------e-invitation .section-custom-----------*/
+                            
+                            .invite .invitation-row {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                flex-wrap: wrap;
+                            }
+                            
+                            .invite .invitation-row .invitation-box {
+                                flex: 1 1 25rem;
+                                margin: 1rem;
+                                position: relative;
+                                border: .2rem dotted var(--clr2);
+                                padding: 2rem;
+                                border-radius: .6rem;
+                                overflow: hidden;
+                                height: 30rem;
+                            }
+                            
+                            .invite .invitation-row .invitation-box:hover {
+                                transition: .5s ease;
+                                transform: translateY(-2rem);
+                            }
+                            
+                            .invite .invitation-row .invitation-box img {
+                                height: 100%;
+                                width: 100%;
+                                object-fit: cover;
+                                /* Ensures the image fits inside the card */
+                                cursor: pointer;
+                                /* Makes the image clickable */
+                            }
+                            
+                            .invite .invitation-row .invitation-box p {
+                                height: 100%;
+                                width: 100%;
+                                /*object-fit: cover;*/
+                            }
+                            
+                            .modal {
+                                display: none;
+                                /* Hidden by default */
+                                position: fixed;
+                                /* Stay in place */
+                                z-index: 1000;
+                                /* Sit on top */
+                                left: 0;
+                                top: 0;
+                                width: 100%;
+                                /* Full width */
+                                height: 100%;
+                                /* Full height */
+                                overflow: auto;
+                                /* Enable scroll if needed */
+                                background-color: rgba(0, 0, 0, 0.8);
+                                /* Black background with opacity */
+                            }
+                            
+                            .modal-content {
+                                margin: auto;
+                                display: block;
+                                width: 80%;
+                                max-width: 700px;
+                            }
+                            
+                            .modal-content img {
+                                width: 100%;
+                            }
+                            
+                            .close {
+                                position: absolute;
+                                top: 15px;
+                                right: 35px;
+                                color: white;
+                                font-size: 40px;
+                                font-weight: bold;
+                                transition: 0.3s;
+                            }
+                            
+                            .close:hover,
+                            .close:focus {
+                                color: #bbb;
+                                text-decoration: none;
+                                cursor: pointer;
+                            }
+                            /* ----------- Media Query for Mobile Devices ----------- */
+                            
+                            @media (max-width: 768px) {
+                                /* For tablet and mobile devices, reduce card size and make it 100% width */
+                                .invite .invitation-row .invitation-box {
+                                    flex: 1 1 100%;
+                                    /* Full-width cards */
+                                    height: auto;
+                                    /* Adjust height based on image and content */
+                                    margin: 0.5rem;
+                                    /* Reduce margin for mobile */
+                                    padding: 1rem;
+                                    /* Reduce padding for mobile */
+                                }
+                                /* Ensure images still fill the cards while maintaining aspect ratio */
+                                .invite .invitation-row .invitation-box img {
+                                    width: 100%;
+                                    height: auto;
+                                    /* Allow images to resize naturally */
+                                    object-fit: cover;
+                                }
+                                /* Reduce the width of the modal content for smaller screens */
+                                .modal-content {
+                                    width: 90%;
+                                    /* Make the modal image more mobile-friendly */
+                                }
+                                /* Make close button smaller */
+                                .close {
+                                    font-size: 30px;
+                                }
+                            }
+                            /* Further media queries for very small devices (e.g., small phones) */
+                            
+                            @media (max-width: 480px) {
+                                .invite .invitation-row .invitation-box {
+                                    padding: 0.5rem;
+                                }
+                                .modal-content {
+                                    width: 95%;
+                                    /* Maximize modal image size for small screens */
+                                }
+                            }
+                            /*---------------------------footer .section-custom-------------*/
+                            
+                            footer {
+                                padding: 5rem 5%;
+                            }
+                            
+                            #contact {
+                                background-color: var(--clr2);
+                            }
+                            
+                            .container-custom {
                                 padding: 3rem;
+                                display: grid;
+                                grid-template-columns: 1fr 1fr 1fr;
+                                grid-gap: 2rem;
                             }
-                        }
-                        /*-----------------------About event-----------------*/
-                        
-                        .containerS {
-                            display: flex;
-                            justify-content: space-between;
-                            align-items: center;
-                            background-color: rgb(239, 205, 228);
-                            width: 1100px;
-                            margin: 22px auto;
-                            padding: 20px;
-                            border-radius: 8px;
-                            box-shadow: 0 4px 8px rgba(215, 62, 62, 0.1);
-                        }
-                        
-                        .slider-container {
-                            flex: 1;
-                            position: relative;
-                            max-width: 60%;
-                            margin-right: 20px;
-                        }
-                        
-                        .slider {
-                            position: relative;
-                            height: 400px;
-                            overflow: hidden;
-                        }
-                        
-                        .slider-img {
-                            width: 100%;
-                            height: 100%;
-                            object-fit: cover;
-                            display: none;
-                            border-radius: 8px;
-                        }
-                        
-                        .arrow {
-                            position: absolute;
-                            top: 93%;
-                            transform: translateY(-50%);
-                            background-color: rgba(0, 0, 0, 0.5);
-                            color: white;
-                            border: none;
-                            padding: 2px 10px;
-                            cursor: pointer;
-                            font-size: 20px;
-                            border-radius: 4px;
-                        }
-                        
-                        .left-arrow {
-                            left: 10px;
-                        }
-                        
-                        .right-arrow {
-                            right: 10px;
-                        }
-                        
-                        .book-now-btn {
-                            position: absolute;
-                            top: 93%;
-                            left: 50%;
-                            transform: translate(-50%, -50%);
-                            background-color: rgba(0, 0, 0, 0.5);
-                            /* Transparent blackish color */
-                            color: white;
-                            border: none;
-                            padding: 10px 20px;
-                            font-size: 18px;
-                            cursor: pointer;
-                            border-radius: 5px;
-                            transition: background-color 0.3s ease;
-                        }
-                        
-                        .book-now-btn:hover {
-                            background-color: rgb(236, 68, 90);
-                            /* Darker on hover */
-                        }
-                        
-                        .rating {
-                            position: absolute;
-                            top: 10px;
-                            right: 10px;
-                            color: yellow;
-                            font-size: 24px;
-                        }
-                        /* Style for stars */
-                        
-                        .rating .star {
-                            color: yellow;
-                        }
-                        
-                        .info-container {
-                            position: relative;
-                            padding: 20px;
-                            flex: 1;
-                            background-color: rgb(245, 225, 245);
-                            padding: 20px;
-                            border-radius: 8px;
-                            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                            color: #333;
-                        }
-                        
-                        .info-container h2 {
-                            margin-bottom: 10px;
-                            font-size: 24px;
-                            color: #444;
-                        }
-                        
-                        .info-container p {
-                            font-family: 'PT Sans', sans-serif;
-                            line-height: 2;
-                        }
-                        /* Responsive Design */
-                        
-                        @media (max-width: 768px) {
+                            
+                            .f-container-custom h2 {
+                                font-size: 2.5rem;
+                                color: var(--clr3);
+                                padding: 1rem 0;
+                            }
+                            
+                            .f-container-custom a {
+                                font-size: 1.4rem;
+                                text-decoration: none;
+                                color: var(--clr3);
+                                padding: 1rem 0;
+                                display: block;
+                            }
+                            
+                            .f-container-custom a:hover {
+                                transform: translateX(.5rem);
+                                transition: .5s ease;
+                            }
+                            
+                            .f-container-custom i {
+                                padding-right: .5rem;
+                                color: var(--clr1);
+                            }
+                            
+                            .f-container-custom p {
+                                padding-bottom: 1rem;
+                                font-size: 1.5rem;
+                                color: var(--clr1);
+                            }
+                            
+                            .f-container-custom input {
+                                width: 90%;
+                                padding: 1rem;
+                                background: #eee;
+                                border: .2rem solid var(--clr1);
+                            }
+                            
+                            .f-container-custom .btn-custom {
+                                background: var(--clr1);
+                                color: #fff;
+                                cursor: pointer;
+                                margin-top: 2rem;
+                                border-radius: .2rem;
+                            }
+                            
+                            .f-container-custom .social i {
+                                margin-top: 1rem;
+                                font-size: 2rem;
+                                background: var(--clr3);
+                                border-radius: 1rem;
+                                padding: 1rem;
+                            }
+                            
+                            .f-container-custom .social i:hover {
+                                transform: rotate(360deg);
+                                transition: 1s ease;
+                            }
+                            
+                            .footer-content {
+                                padding: 2rem 0;
+                                text-align: center;
+                            }
+                            
+                            .footer-content h1 {
+                                font-size: 3rem;
+                                color: #aaa;
+                            }
+                            
+                            .copyright {
+                                padding: 2rem 0;
+                                text-align: center;
+                                background: var(--clr1);
+                                color: #fff;
+                                font-size: 1.5rem;
+                            }
+                            
+                            .copyright p {
+                                font-size: 1.2rem;
+                                color: #aaa;
+                            }
+                            /*----------------------media Query-------------------*/
+                            
+                            @media(max-width:1200px) {
+                                html {
+                                    font-size: 55%;
+                                }
+                                .head {
+                                    padding: 3rem;
+                                }
+                                .section-custom {
+                                    padding: 3rem 2rem;
+                                }
+                            }
+                            
+                            @media(max-width:991px) {
+                                html {
+                                    font-size: 55%;
+                                }
+                                .head {
+                                    padding: 3rem;
+                                }
+                                #menu-bar {
+                                    display: inline-block;
+                                    font-size: 2rem;
+                                }
+                                .navbar-custom {
+                                    position: absolute;
+                                    top: 99%;
+                                    left: 0;
+                                    right: 0;
+                                    background: var(--clr2);
+                                    clip-path: polygon(0 0, 100% 0%, 100% 0, 0 0);
+                                }
+                                .head .navbar-custom.active {
+                                    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+                                }
+                                .navbar-custom a {
+                                    display: block;
+                                    margin: 2rem;
+                                }
+                                .inner-content {
+                                    margin-top: 2rem;
+                                }
+                                .service,
+                                .vendor-list,
+                                .venue-list,
+                                .invitation-row,
+                                .container-custom {
+                                    display: inline-block;
+                                }
+                                .in-box {
+                                    margin-bottom: 2rem;
+                                }
+                                .blog-content {
+                                    padding: 1rem;
+                                }
+                                .section-custom h4 {
+                                    font-size: 3rem;
+                                    margin-left: 10rem;
+                                    text-align: center;
+                                }
+                            }
+                            
+                            @media(max-width:768px) {
+                                .home-content {
+                                    display: inline-block;
+                                }
+                                .home .inner-content {
+                                    text-align: center;
+                                }
+                                .home .inner-content-img img {
+                                    width: 35rem;
+                                    align-items: center;
+                                }
+                            }
+                            
+                            @media(max-width:450px) {
+                                html {
+                                    font-size: 50%;
+                                }
+                                .head {
+                                    padding: 3rem;
+                                }
+                            }
+                            /*-----------------------About event-----------------*/
+                            
                             .containerS {
-                                flex-direction: column;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                background-color: rgb(239, 205, 228);
+                                width: 1100px;
+                                margin: 22px auto;
+                                padding: 20px;
+                                border-radius: 8px;
+                                box-shadow: 0 4px 8px rgba(215, 62, 62, 0.1);
                             }
-                            .slider-container,
+                            
+                            .slider-container {
+                                flex: 1;
+                                position: relative;
+                                max-width: 60%;
+                                margin-right: 20px;
+                            }
+                            
+                            .slider {
+                                position: relative;
+                                height: 400px;
+                                overflow: hidden;
+                            }
+                            
+                            .slider-img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                display: none;
+                                border-radius: 8px;
+                            }
+                            
+                            .arrow {
+                                position: absolute;
+                                top: 93%;
+                                transform: translateY(-50%);
+                                background-color: rgba(0, 0, 0, 0.5);
+                                color: white;
+                                border: none;
+                                padding: 2px 10px;
+                                cursor: pointer;
+                                font-size: 20px;
+                                border-radius: 4px;
+                            }
+                            
+                            .left-arrow {
+                                left: 10px;
+                            }
+                            
+                            .right-arrow {
+                                right: 10px;
+                            }
+                            
+                            .book-now-btn {
+                                position: absolute;
+                                top: 93%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                                background-color: rgba(0, 0, 0, 0.5);
+                                /* Transparent blackish color */
+                                color: white;
+                                border: none;
+                                padding: 10px 20px;
+                                font-size: 18px;
+                                cursor: pointer;
+                                border-radius: 5px;
+                                transition: background-color 0.3s ease;
+                            }
+                            
+                            .book-now-btn:hover {
+                                background-color: rgb(236, 68, 90);
+                                /* Darker on hover */
+                            }
+                            
+                            .rating {
+                                position: absolute;
+                                top: 10px;
+                                right: 10px;
+                                color: yellow;
+                                font-size: 24px;
+                            }
+                            /* Style for stars */
+                            
+                            .rating .star {
+                                color: yellow;
+                            }
+                            
                             .info-container {
-                                max-width: 100%;
-                                margin-right: 0;
+                                position: relative;
+                                padding: 20px;
+                                flex: 1;
+                                background-color: rgb(245, 225, 245);
+                                padding: 20px;
+                                border-radius: 8px;
+                                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                                color: #333;
+                            }
+                            
+                            .info-container h2 {
+                                margin-bottom: 10px;
+                                font-size: 24px;
+                                color: #444;
+                            }
+                            
+                            .info-container p {
+                                font-family: 'PT Sans', sans-serif;
+                                line-height: 2;
+                            }
+                            /* Responsive Design */
+                            
+                            @media (max-width: 768px) {
+                                .containerS {
+                                    flex-direction: column;
+                                }
+                                .slider-container,
+                                .info-container {
+                                    max-width: 100%;
+                                    margin-right: 0;
+                                    margin-bottom: 20px;
+                                }
+                            }
+                            /* making navbar responsive */
+                            /*About Us code*/
+                            /*{
+                                margin: 20%;
+                                padding: 33%;
+                                box-sizing: border-box;
+                                font-family: Arial, sans-serif;
+                            }
+                            
+                            body {
+                                background-color: #f8f8f8;
+                                color: #333;
+                                padding: 20px;
+                            }
+                            
+                            */
+                            
+                            .h1 {
+                                text-align: center;
+                                margin-bottom: 40px;
+                                font-size: 2.5em;
+                                color: #333;
+                            }
+                            
+                            .team-section {
+                                max-width: 2000px;
+                                margin: 2 auto;
+                            }
+                            
+                            .team-container {
+                                display: flex;
+                                justify-content: space-between;
+                                flex-wrap: wrap;
+                            }
+                            
+                            .team-member {
+                                background-color: white;
+                                width: 32%;
+                                border-radius: 8px;
+                                text-align: center;
+                                margin-bottom: 20px;
+                                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                                padding: 20px;
+                                transition: transform 0.3s ease-in-out;
+                            }
+                            
+                            .team-container {
+                                padding: 0 5%;
+                            }
+                            
+                            .team-member:hover {
+                                transform: translateY(-10px);
+                            }
+                            
+                            .team-member img {
+                                width: 45%;
+                                border-radius: 50%;
+                                margin-bottom: 25px;
+                            }
+                            
+                            h2 {
+                                color: #333;
+                                margin-bottom: 10px;
+                            }
+                            
+                            #para {
+                                color: #666;
                                 margin-bottom: 20px;
                             }
-                        }
-                        /* making navbar responsive */
+                            
+                            .read-more {
+                                background-color: #6dc7f5;
+                                color: white;
+                                border: none;
+                                padding: 10px 20px;
+                                border-radius: 5px;
+                                cursor: pointer;
+                                transition: background-color 0.3s ease;
+                            }
+                            
+                            .read-more:hover {
+                                background-color: #007bff;
+                            }
+                            /* Responsive Design */
+                            
+                            @media (max-width: 768px) {
+                                .team-member {
+                                    width: 45%;
+                                }
+                            }
