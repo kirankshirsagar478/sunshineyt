@@ -32,7 +32,12 @@
                                 background: var(--clr1);
                             }
                             
-                            .section-custom {
+                            .section-custom1 {
+                                padding: 7rem 9%;
+                                margin-top: 7rem;
+                            }
+
+                            .section-custom2 {
                                 padding: 7rem 9%;
                                 margin-top: 7rem;
                             }
@@ -538,7 +543,7 @@
                             
                             @media (max-width:767px) {
                                 .service {
-                                    margin-bottom: 30rem;
+                                    margin-bottom: 2rem;
                                 }
                             }
                             /*----------------------vendor .section-custom------------*/
@@ -902,7 +907,16 @@
                                     padding: 3rem;
                                 }
                                 .section-custom {
-                                    padding: 3rem 2rem;
+                                    padding: 2rem 2rem;
+                                }
+                                .venue-box {
+                                    min-height: 30rem; /* Increase height for better spacing */
+                                }
+                                .venue-info {
+                                    font-size: 1.2rem; /* Improve readability */
+                                }
+                                section {
+                                    margin-bottom: 2rem; /* Reduce excessive gaps */
                                 }
                             }
                             
@@ -1190,3 +1204,7 @@
                                     width: 45%;
                                 }
                             }
+
+
+                            /* chatgpt fixed issues */
+                            
